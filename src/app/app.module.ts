@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ScaffoldMenuComponent } from './components/scaffold-menu/scaffold-menu.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ScaffoldMenuComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
