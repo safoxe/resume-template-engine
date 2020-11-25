@@ -12,8 +12,6 @@
 }
 
 .heading {
-  display: flex;
-  flex-direction: row;
   padding-bottom: 8px;
   align-items: baseline;
   font-style: normal;
@@ -21,6 +19,35 @@
   font-size: 16px;
   line-height: 28px;
   color: #1a1a1a;
+}
+
+.text-description {
+  padding-left: 7px;
+  padding-top: 2px;
+  align-items: baseline;
+  color: #1a1a1a;
+}
+
+.heading-small {
+  padding-bottom: 8px;
+  align-items: baseline;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 28px;
+  color: #1a1a1a;
+}
+
+.text-description-small {
+  padding-left: 7px;
+  padding-top: 2px;
+  font-size: 14px;
+  align-items: baseline;
+  color: #1a1a1a;
+}
+
+.scaffold-text {
+  padding-left: 6%;
 }
 
 .header-text {

@@ -9,9 +9,56 @@
         </div>
       </div>
     </div>
-    <div class="row scaffold-body">
-      <div class="col-sm heading">Scaffoled data</div>
-      <div class="col-sm scaffold-info">Data</div>
+    <div class="scaffold-body">
+      <div class="row">
+        <div class="col-sm heading">Scaffoled data</div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="d-flex">
+            <span class="heading">Project:</span>
+            <span class="text-description">{{ projectName }}</span>
+          </div>
+
+          <div class="scaffold-text">
+            <span class="heading-small">Domain:</span>
+            <span class="text-description-small">{{ mainTechnology }}</span>
+          </div>
+
+          <div class="scaffold-text">
+            <span class="heading-small">Main technology:</span>
+            <span class="text-description-small">{{ mainTechnology }}</span>
+          </div>
+
+          <div class="scaffold-text">
+            <span class="heading-small">Position type:</span>
+            <span class="text-description-small">{{ mainTechnology }}</span>
+          </div>
+
+          <form [formGroup]="resumeForm" (ngSubmit)="generateTemplate()">
+            <div class="scaffold-text">
+              <span class="heading-small">Position type:</span>
+              <select formControlName="positionType" class="text-description-small">
+                <option value="">Select position type</option>
+                <option *ngFor="let position of getPositionIds()" [value]="position">{{getPositionName(position)}}</option>
+              </select>
+            </div>
+
+            <div class="scaffold-text">
+              <span class="heading-small">Level of seniority:</span>
+              <select formControlName="seniorityLevel" class="text-description-small">
+                <option value="">Select seniority level</option>
+                <option *ngFor="let level of getSeniorityIds()" [value]="level">{{getSeniorityName(level)}}</option>
+              </select>
+            </div>
+
+            <div class="scaffold-text">
+              <button class="btn-danger">Generate template</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
