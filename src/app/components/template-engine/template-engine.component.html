@@ -1,0 +1,23 @@
+<div *ngIf="resumeData" class="row">
+  <div class="col-sm">
+    <div class="d-flex">
+      <span class="heading">Project:</span>
+      <span class="text-description">{{ resumeData.name }}</span>
+
+      <div>
+        <span class="heading-small">Domain:</span>
+        <span class="text-description-small">{{ resumeData.domain }}</span>
+      </div>
+
+      <div>
+        <span class="heading-small">Main technology:</span>
+        <span class="text-description-small">{{ resumeData.mainTechnology }}</span>
+      </div>
+
+      <div>
+        <span class="heading-small">Years of experience:</span>
+        <span class="text-description-small">{{ resumeData.mainTechnology }}</span>
+      </div>
+    </div>
+  </div>
+</div>
