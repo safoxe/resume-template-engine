@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { PopUpService } from 'src/app/services/pop-up-service/pop-up.service';
 import { environment } from 'src/environments/environment';
+import { ResumeDataService } from 'src/app/services/resume-data/resume-data.service';
 import { PositionId, positionIds, PositionName, positions } from './types/position.type';
 import {
   SeniorityId,
@@ -23,7 +24,11 @@ export class ScaffoldMenuComponent implements OnInit {
     domain: 'domain',
   };
 
-  constructor(private formBuilder: FormBuilder, private popUpService: PopUpService) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private popUpService: PopUpService,
+    private resumeDataService: ResumeDataService,
+  ) {}
 
   resumeForm = this.formBuilder.group({
     seniorityLevel: ['', Validators.required],
@@ -56,7 +61,7 @@ export class ScaffoldMenuComponent implements OnInit {
       positionType: this.resumeForm.get('positionType').value,
       seniorityLevel: this.resumeForm.get('seniorityLevel').value,
     };
-
-    this.popUpService.openPageAsPopup(environment.siteUrl);
+    this.resumeDataService.setResumeData(resumeData);
+    this.popUpService.openPageAsPopup(environment.siteUrl, this.scaffoldedData.projectName);
   }
 }

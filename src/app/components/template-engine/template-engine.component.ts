@@ -10,9 +10,11 @@ import { Resume } from '../scaffold-menu/types/resume-data.type';
 export class TemplateEngineComponent implements OnInit {
   resumeData: Resume;
 
+  projectName: string;
+
   constructor(private resumeDataService: ResumeDataService) {}
 
-  ngOnInit(): void {
-    this.resumeData = this.resumeDataService.getResumeData();
+  async ngOnInit(): Promise<void> {
+    this.resumeData = await this.resumeDataService.getResumeData(this.projectName).toPromise();
   }
 }
