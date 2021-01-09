@@ -10,11 +10,24 @@ import { Observable } from 'rxjs';
 export class ResumeDataService {
   constructor(private http: HttpClient) {}
 
-  setResumeData(resume: Resume): void {
-    this.http.post<Resume>(`${environment.endpoint}/api/scaffold/addScaffoldedData`, resume);
+  setResumeData(resume: Resume): Observable<any> {
+    return this.http.post(
+      `${environment.endpoint}/api/scaffold/addScaffoldedData`,
+      {
+        Name: resume.name,
+        Domain: resume.domain,
+        PositionType: resume.positionType,
+        SeniorityLevel: resume.seniorityLevel,
+      },
+      {
+        responseType: 'text',
+      },
+    );
   }
 
-  getResumeData(projectName: string): Observable<Resume> {
-    return this.http.get<Resume>(`${environment.endpoint}/api/scaffold/getScaffoldedData`);
+  getResumeData(projectId: string): Observable<Resume> {
+    return this.http.get<Resume>(
+      `${environment.endpoint}/api/scaffold/getScaffoldedData/${projectId}`,
+    );
   }
 }

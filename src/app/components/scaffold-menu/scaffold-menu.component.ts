@@ -53,7 +53,7 @@ export class ScaffoldMenuComponent implements OnInit {
     return seniorityTypes[seniorityId];
   }
 
-  generateTemplate(): void {
+  async generateTemplate(): Promise<void> {
     const resumeData: Resume = {
       name: this.scaffoldedData.projectName,
       domain: this.scaffoldedData.domain as Domain,
@@ -61,7 +61,7 @@ export class ScaffoldMenuComponent implements OnInit {
       positionType: this.resumeForm.get('positionType').value,
       seniorityLevel: this.resumeForm.get('seniorityLevel').value,
     };
-    this.resumeDataService.setResumeData(resumeData);
-    this.popUpService.openPageAsPopup(environment.siteUrl, this.scaffoldedData.projectName);
+    const id = await this.resumeDataService.setResumeData(resumeData).toPromise();
+    this.popUpService.openPageAsPopup(environment.siteUrl, id);
   }
 }
