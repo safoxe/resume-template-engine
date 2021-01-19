@@ -14,8 +14,6 @@ export class ResumeDataService {
     return this.http.post(
       `${environment.endpoint}/api/scaffold/addScaffoldedData`,
       {
-        Name: resume.name,
-        Domain: resume.domain,
         PositionType: resume.positionType,
         SeniorityLevel: resume.seniorityLevel,
       },

@@ -15,21 +15,6 @@
       </div>
       <div class="row">
         <div class="col-sm">
-          <div class="d-flex">
-            <span class="heading">Project:</span>
-            <span class="text-description">{{ scaffoldedData.projectName }}</span>
-          </div>
-
-          <div class="scaffold-text">
-            <span class="heading-small">Domain:</span>
-            <span class="text-description-small">{{ scaffoldedData.domain }}</span>
-          </div>
-
-          <div class="scaffold-text">
-            <span class="heading-small">Main technology:</span>
-            <span class="text-description-small">{{ scaffoldedData.mainTechnology }}</span>
-          </div>
-
           <form [formGroup]="resumeForm" (ngSubmit)="generateTemplate()">
             <div class="scaffold-text">
               <span class="heading-small">Position type:</span>

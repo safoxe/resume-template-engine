@@ -10,7 +10,7 @@ import {
   SeniorityName,
   seniorityTypes,
 } from './types/seniority-level.type';
-import { Resume, Domain } from './types/resume-data.type';
+import { Resume } from './types/resume-data.type';
 
 @Component({
   selector: 'app-scaffold-menu',
@@ -18,12 +18,6 @@ import { Resume, Domain } from './types/resume-data.type';
   styleUrls: ['./scaffold-menu.component.css'],
 })
 export class ScaffoldMenuComponent implements OnInit {
-  scaffoldedData = {
-    projectName: 'Some Project',
-    mainTechnology: 'C++',
-    domain: 'domain',
-  };
-
   constructor(
     private formBuilder: FormBuilder,
     private popUpService: PopUpService,
@@ -55,9 +49,6 @@ export class ScaffoldMenuComponent implements OnInit {
 
   async generateTemplate(): Promise<void> {
     const resumeData: Resume = {
-      name: this.scaffoldedData.projectName,
-      domain: this.scaffoldedData.domain as Domain,
-      mainTechnology: this.scaffoldedData.mainTechnology,
       positionType: this.resumeForm.get('positionType').value,
       seniorityLevel: this.resumeForm.get('seniorityLevel').value,
     };
