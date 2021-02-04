@@ -1,0 +1,15 @@
+.heading-tools {
+  font: bolder;
+}
+.management-btn-row {
+  margin-bottom: 1rem;
+}
+
+.management-btn {
+  align-content: center;
+  width: 10rem;
+}
+
+.tools-container {
+  align-content: center;
+}

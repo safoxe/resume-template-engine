@@ -52,7 +52,8 @@ export class ScaffoldMenuComponent implements OnInit {
       positionType: this.resumeForm.get('positionType').value,
       seniorityLevel: this.resumeForm.get('seniorityLevel').value,
     };
-    const id = await this.resumeDataService.setResumeData(resumeData).toPromise();
+    // TO-DO remove when testing the integration with mock company site
+    const id = '6006ea716277ee2fb02a2c94'; // await this.resumeDataService.setResumeData(resumeData).toPromise();
     this.popUpService.openPageAsPopup(environment.siteUrl, id);
   }
 }

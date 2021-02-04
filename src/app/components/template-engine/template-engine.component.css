@@ -32,3 +32,16 @@
   align-items: baseline;
   color: #1a1a1a;
 }
+
+.control-panel {
+  background-color: #f4f4f4;
+}
+
+.template-resume {
+  background-color: #e4e3e3;
+}
+
+.no-gutters-col {
+  padding-right: 0;
+  padding-left: 0;
+}
