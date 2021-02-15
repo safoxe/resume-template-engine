@@ -1,0 +1,13 @@
+<div *ngIf="editView; then editBlock; else viewBlock"></div>
+<ng-template #editBlock>
+  <input
+    (focusout)="emitNewValue()"
+    (focusout)="editView = false"
+    (keydown.enter)="$event.target.blur()"
+    [(ngModel)]="value"
+    focus
+  />
+</ng-template>
+<ng-template #viewBlock>
+  <div (click)="openEditView()">{{ value }}</div>
+</ng-template>

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,8 @@ import { TemplateEngineComponent } from './components/template-engine/template-e
 import { ManagementToolsComponent } from './components/management-tools/management-tools.component';
 import { ResourceToolsComponent } from './components/resource-tools/resource-tools.component';
 import { ResumeTemplateComponent } from './components/resume-template/resume-template.component';
+import { EditableFieldComponent } from './components/editable-field/editable-field.component';
+import { FocusDirective } from './components/editable-field/directives/focus.directive';
 
 @NgModule({
   declarations: [
@@ -20,8 +22,17 @@ import { ResumeTemplateComponent } from './components/resume-template/resume-tem
     ManagementToolsComponent,
     ResourceToolsComponent,
     ResumeTemplateComponent,
+    EditableFieldComponent,
+    FocusDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

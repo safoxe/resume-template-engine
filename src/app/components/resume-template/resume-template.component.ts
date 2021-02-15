@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { ControlNameValue } from '../editable-field/types/control-value.type';
 
 @Component({
   selector: 'app-resume-template',
@@ -6,5 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume-template.component.css'],
 })
 export class ResumeTemplateComponent implements OnInit {
+  form = this.fb.group({
+    positionName: this.fb.control('Test Position Name'),
+  });
+
+  constructor(private fb: FormBuilder) {}
+
   ngOnInit(): void {}
+
+  updateControlValue(controlNameValue: ControlNameValue) {
+    this.form.get(controlNameValue.controlName).setValue(controlNameValue.value);
+  }
 }
