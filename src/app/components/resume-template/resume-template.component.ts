@@ -6,7 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume-template.component.css'],
 })
 export class ResumeTemplateComponent implements OnInit {
-  constructor() {}
-
   ngOnInit(): void {}
 }
