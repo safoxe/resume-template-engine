@@ -16,10 +16,10 @@
       <app-management-tools></app-management-tools>
     </div>
     <div class="col-md-8 template-resume no-gutters-col">
-      <app-resume-template></app-resume-template>
+      <app-resume-template [coverPath]="coverPath"></app-resume-template>
     </div>
     <div class="col-md-2 control-panel no-gutters-col">
-      <app-resource-tools></app-resource-tools>
+      <app-resource-tools (updateCover)="updateCoverPath($event)"></app-resource-tools>
     </div>
   </div>
 </div>

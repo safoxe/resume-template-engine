@@ -1,4 +1,5 @@
 <div class="shadow p-3 mb-5 bg-white rounded resume-box">
+  <img *ngIf="coverPath" [src]="coverPath" style="height: 100px; width: 100px" />
   <app-editable-field
     [value]="form.get('positionName').value"
     controlName="positionName"

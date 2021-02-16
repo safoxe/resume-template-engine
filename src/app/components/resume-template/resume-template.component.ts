@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ControlNameValue } from '../editable-field/types/control-value.type';
 
@@ -8,6 +8,8 @@ import { ControlNameValue } from '../editable-field/types/control-value.type';
   styleUrls: ['./resume-template.component.css'],
 })
 export class ResumeTemplateComponent implements OnInit {
+  @Input() coverPath: string;
+
   form = this.fb.group({
     positionName: this.fb.control('Test Position Name'),
   });
