@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ResumeCoverService } from 'src/app/services/resume-cover-service/resume-cover.service';
 
 @Component({
   selector: 'app-resource-tools',
@@ -8,7 +9,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class ResourceToolsComponent implements OnInit {
   coverAccordionOpen = false;
 
-  @Output() updateCover: EventEmitter<string> = new EventEmitter<string>();
+  constructor(private resumeCoverService: ResumeCoverService) {}
 
   ngOnInit(): void {}
 
@@ -16,7 +17,7 @@ export class ResourceToolsComponent implements OnInit {
     this.coverAccordionOpen = !this.coverAccordionOpen;
   }
 
-  selectCover(): void {
-    this.updateCover.emit('/assets/logo.png');
+  selectCover(coverPath: string): void {
+    this.resumeCoverService.updateResumeCoverPath.next(coverPath);
   }
 }

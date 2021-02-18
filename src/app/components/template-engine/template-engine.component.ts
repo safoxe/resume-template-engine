@@ -13,9 +13,6 @@ export class TemplateEngineComponent implements OnInit {
 
   projectId: string;
 
-  // TO-DO: Add default value
-  coverPath = '';
-
   constructor(
     private resumeDataService: ResumeDataService,
     private activatedRoute: ActivatedRoute,
@@ -24,9 +21,5 @@ export class TemplateEngineComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.projectId = this.activatedRoute.snapshot.queryParamMap.get('projectId');
     this.resumeData = await this.resumeDataService.getResumeData(this.projectId).toPromise();
-  }
-
-  updateCoverPath(path: string): void {
-    this.coverPath = path;
   }
 }

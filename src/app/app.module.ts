@@ -13,6 +13,7 @@ import { ResourceToolsComponent } from './components/resource-tools/resource-too
 import { ResumeTemplateComponent } from './components/resume-template/resume-template.component';
 import { EditableFieldComponent } from './components/editable-field/editable-field.component';
 import { FocusDirective } from './components/editable-field/directives/focus.directive';
+import { BaseComponent } from './components/base/base.component';
 
 @NgModule({
   declarations: [
