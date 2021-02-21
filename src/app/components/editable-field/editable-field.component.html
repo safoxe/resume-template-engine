@@ -6,8 +6,9 @@
     (keydown.enter)="$event.target.blur()"
     [(ngModel)]="value"
     focus
+    class="edit-field"
   />
 </ng-template>
 <ng-template #viewBlock>
-  <div (click)="openEditView()">{{ value }}</div>
+  <span (click)="openEditView()">{{ value }}</span>
 </ng-template>

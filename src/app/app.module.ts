@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScaffoldMenuComponent } from './components/scaffold-menu/scaffold-menu.component';
@@ -13,7 +15,6 @@ import { ResourceToolsComponent } from './components/resource-tools/resource-too
 import { ResumeTemplateComponent } from './components/resume-template/resume-template.component';
 import { EditableFieldComponent } from './components/editable-field/editable-field.component';
 import { FocusDirective } from './components/editable-field/directives/focus.directive';
-import { BaseComponent } from './components/base/base.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,9 @@ import { BaseComponent } from './components/base/base.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatNativeDateModule,
   ],
-  providers: [],
+  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

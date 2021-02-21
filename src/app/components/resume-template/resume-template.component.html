@@ -1,8 +1,135 @@
 <div class="shadow p-3 mb-5 bg-white rounded resume-box">
-  <img *ngIf="coverPath" [src]="coverPath" style="height: 100px; width: 100px" />
-  <app-editable-field
-    [value]="form.get('positionName').value"
-    controlName="positionName"
-    (updateValue)="updateControlValue($event)"
-  ></app-editable-field>
+  <div
+    id="job-title-cover"
+    [ngStyle]="{ 'background-image': 'url(' + coverPath + ')' }"
+    class="job-title-cover"
+  >
+    <app-editable-field
+      [value]="form.get('positionName').value"
+      controlName="positionName"
+      (updateValue)="updateControlValue($event)"
+      class="d-flex justify-content-center align-items-center job-title-text"
+    ></app-editable-field>
+    <div class="shadow p-3 mb-5 bg-white resume-data">
+      <div class="main-resume-block">
+        <div class="row">
+          <span class="col-md text-margin">
+            <b>Type:&nbsp;&nbsp;</b>
+            <app-editable-field
+              [value]="form.get('positionType').value"
+              controlName="positionType"
+              (updateValue)="updateControlValue($event)"
+            ></app-editable-field>
+          </span>
+          <span class="col-md text-margin">
+            <b>Position:&nbsp;&nbsp;</b>
+            <app-editable-field
+              [value]="form.get('positionName').value"
+              controlName="positionName"
+              (updateValue)="updateControlValue($event)"
+            ></app-editable-field>
+          </span>
+        </div>
+
+        <div class="row">
+          <span class="col-md text-margin">
+            <b>Location:&nbsp;&nbsp;</b>
+            <app-editable-field
+              [value]="form.get('location').value"
+              controlName="location"
+              (updateValue)="updateControlValue($event)"
+            ></app-editable-field>
+          </span>
+          <span class="col-md">
+            <b>Years of experience:&nbsp;&nbsp;</b>
+            <app-editable-field
+              [value]="form.get('yearsOfExperience').value"
+              controlName="yearsOfExperience"
+              (updateValue)="updateControlValue($event)"
+            ></app-editable-field>
+          </span>
+        </div>
+
+        <div class="row">
+          <span class="col-md">
+            <b>Responsible recruiter:&nbsp;&nbsp;</b>
+            <app-editable-field
+              [value]="form.get('recruiter').value"
+              controlName="recruiter"
+              (updateValue)="updateControlValue($event)"
+            ></app-editable-field>
+          </span>
+        </div>
+      </div>
+
+      <div class="about-project-block row">
+        <span class="about-project-title">About project</span>
+        <p class="about-project-text">
+          <app-editable-field
+            [value]="form.get('aboutProject').value"
+            controlName="aboutProject"
+            (updateValue)="updateControlValue($event)"
+          ></app-editable-field>
+        </p>
+      </div>
+
+      <div class="about-project-block row">
+        <span class="about-project-title">Technologies</span>
+        <div class="w-100"></div>
+        <div class="technologies-resume-block">
+          <span class="technologies-text">Required</span>
+          <div class="technologies-logo row">
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/add_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="technologies-resume-block">
+          <span class="technologies-text">Nice to have</span>
+          <div class="technologies-logo row">
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+            <div class="col-md">
+              <img src="/assets/add_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
-@Injectable({ providedIn: 'any' })
+@Injectable({ providedIn: 'root' })
 export class ResumeCoverService {
-  updateResumeCoverPath = new Subject<string>();
+  updateResumeCoverPath = new BehaviorSubject<string>('/assets/cover-1.png');
 }

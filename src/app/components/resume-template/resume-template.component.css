@@ -3,5 +3,65 @@
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 5%;
-  min-height: 700px;
+  min-height: 1100px;
+  padding: 0;
+}
+.job-title-cover {
+  height: 350px;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+  background-position: 50%;
+  background-size: cover;
+}
+.job-title-text {
+  font-size: 45pt;
+  color: white;
+  height: 250px;
+}
+.resume-data {
+  min-height: 300px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background: transparent;
+}
+
+.main-resume-block {
+  margin: 2rem;
+  border: 0.23rem solid black;
+  padding: 0.8rem;
+}
+
+.text-margin {
+  margin-bottom: 1.5rem;
+}
+
+.about-project-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.about-project-block {
+  margin: 2rem;
+}
+
+.about-project-text {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.technologies-resume-block {
+  margin: 1rem;
+  border: 0.23rem solid black;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+
+.technologies-logo {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.technologies-text {
+  font-style: italic;
 }
