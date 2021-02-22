@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ResumeCoverService } from 'src/app/services/resume-cover-service/resume-cover.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CoverImageDialogComponent } from '../cover-image-dialog/cover-image-dialog.component';
 
 @Component({
   selector: 'app-resource-tools',
@@ -7,17 +8,11 @@ import { ResumeCoverService } from 'src/app/services/resume-cover-service/resume
   styleUrls: ['./resource-tools.component.css'],
 })
 export class ResourceToolsComponent implements OnInit {
-  coverAccordionOpen = false;
-
-  constructor(private resumeCoverService: ResumeCoverService) {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
-  toggleCoversAccordion(): void {
-    this.coverAccordionOpen = !this.coverAccordionOpen;
-  }
-
-  selectCover(coverPath: string): void {
-    this.resumeCoverService.updateResumeCoverPath.next(coverPath);
+  openCoverImagePopUp(): void {
+    this.dialog.open(CoverImageDialogComponent);
   }
 }

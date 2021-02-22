@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ResumeDataService } from 'src/app/services/resume-data/resume-data.service';
-import { Resume } from '../scaffold-menu/types/resume-data.type';
+import { GeneratedResumeData, Resume } from '../scaffold-menu/types/resume-data.type';
 
 @Component({
   selector: 'app-template-engine',
@@ -9,7 +9,9 @@ import { Resume } from '../scaffold-menu/types/resume-data.type';
   styleUrls: ['./template-engine.component.css'],
 })
 export class TemplateEngineComponent implements OnInit {
-  resumeData: Resume;
+  resumeData: GeneratedResumeData;
+
+  res: Resume;
 
   projectId: string;
 

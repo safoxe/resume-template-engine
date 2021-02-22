@@ -1,0 +1,8 @@
+<div class="row">
+  <button (click)="close()">Close</button>
+</div>
+<div class="row">
+  <div *ngFor="let imagePath of imagePaths" (click)="selectCover(imagePath)" class="col-md">
+    <img [src]="imagePath" style="height: 100px; width: 200px" />
+  </div>
+</div>

@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Resume } from 'src/app/components/scaffold-menu/types/resume-data.type';
+import {
+  GeneratedResumeData,
+  Resume,
+} from 'src/app/components/scaffold-menu/types/resume-data.type';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -23,8 +26,8 @@ export class ResumeDataService {
     );
   }
 
-  getResumeData(projectId: string): Observable<Resume> {
-    return this.http.get<Resume>(
+  getResumeData(projectId: string): Observable<GeneratedResumeData> {
+    return this.http.get<GeneratedResumeData>(
       `${environment.endpoint}/api/scaffold/getScaffoldedData/${projectId}`,
     );
   }

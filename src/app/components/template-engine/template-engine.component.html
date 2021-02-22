@@ -1,10 +1,22 @@
-<div>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand">
+    <img
+      src="../../../assets/logo.png"
+      width="30"
+      height="30"
+      class="d-inline-block align-top"
+      alt=""
+    />
+    Template Engine
+  </a>
+</nav>
+<div *ngIf="resumeData">
   <div class="row" style="height: fit-content; width: 100%; margin: 0">
     <div class="col-md-2 control-panel no-gutters-col">
       <app-management-tools></app-management-tools>
     </div>
     <div class="col-md-8 template-resume no-gutters-col">
-      <app-resume-template></app-resume-template>
+      <app-resume-template [resumeData]="resumeData"></app-resume-template>
     </div>
     <div class="col-md-2 control-panel no-gutters-col">
       <app-resource-tools></app-resource-tools>

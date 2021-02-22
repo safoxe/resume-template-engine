@@ -22,4 +22,8 @@ export class EditableFieldComponent {
   emitNewValue(): void {
     this.updateValue.emit({ controlName: this.controlName, value: this.value } as ControlNameValue);
   }
+
+  getSize(): number {
+    return this.value.length > 80 ? 80 : this.value.length;
+  }
 }

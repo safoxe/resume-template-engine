@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScaffoldMenuComponent } from './components/scaffold-menu/scaffold-menu.component';
@@ -15,6 +17,8 @@ import { ResourceToolsComponent } from './components/resource-tools/resource-too
 import { ResumeTemplateComponent } from './components/resume-template/resume-template.component';
 import { EditableFieldComponent } from './components/editable-field/editable-field.component';
 import { FocusDirective } from './components/editable-field/directives/focus.directive';
+import { CoverImageDialogComponent } from './components/cover-image-dialog/cover-image-dialog.component';
+import { TechnologiesDialogComponent } from './components/technologies-dialog/technologies-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,8 @@ import { FocusDirective } from './components/editable-field/directives/focus.dir
     ResumeTemplateComponent,
     EditableFieldComponent,
     FocusDirective,
+    CoverImageDialogComponent,
+    TechnologiesDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,8 @@ import { FocusDirective } from './components/editable-field/directives/focus.dir
     HttpClientModule,
     FormsModule,
     MatNativeDateModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
   ],
   providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }],
   bootstrap: [AppComponent],

@@ -7,56 +7,7 @@
   <div class="tools-container">
     <div class="row">
       <div class="col-md">
-        <div class="accordion" id="accordionExample">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                <button
-                  class="btn btn-link"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseCover"
-                  aria-expanded="true"
-                  aria-controls="collapseCover"
-                  (click)="toggleCoversAccordion()"
-                >
-                  Covers
-                </button>
-              </h5>
-            </div>
-          </div>
-
-          <div
-            id="collapseCover"
-            class="collapse"
-            [ngClass]="coverAccordionOpen ? 'show' : ''"
-            aria-labelledby="headingOne"
-            data-parent="#accordionExample"
-          >
-            <!-- <div class="card-body">
-              <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                <div class="input-group">
-                  <input
-                    type="search"
-                    placeholder="search..."
-                    aria-describedby="button-search"
-                    class="form-control border-0 bg-light"
-                  />
-                  <div class="input-group-append">
-                    <button id="button-search" type="submit" class="btn btn-link text-primary">
-                      <i class="fa fa-search"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- TO-DO: Add selection and default value of path image -->
-            <div (click)="selectCover('/assets/cover-1.png')">
-              <img src="/assets/cover-1.png" style="height: 100px; width: 200px" />
-            </div>
-          </div>
-        </div>
+        <button class="btn btn-outline-dark" (click)="openCoverImagePopUp()">Covers</button>
       </div>
     </div>
   </div>
