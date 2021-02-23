@@ -1,0 +1,15 @@
+.close-btn {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+.pop-up-menu {
+  margin-bottom: 1rem;
+  padding: 0;
+}

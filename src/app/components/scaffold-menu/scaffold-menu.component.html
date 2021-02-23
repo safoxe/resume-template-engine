@@ -18,7 +18,7 @@
           <form [formGroup]="resumeForm" (ngSubmit)="generateTemplate()">
             <div class="scaffold-text">
               <span class="heading-small">Position type:</span>
-              <select formControlName="positionType" class="text-description-small">
+              <select formControlName="positionType" class="text-description-small form-select">
                 <option value="">Select position type</option>
                 <option *ngFor="let position of getPositionIds()" [value]="position">
                   {{ getPositionName(position) }}
@@ -28,7 +28,7 @@
 
             <div class="scaffold-text">
               <span class="heading-small">Level of seniority:</span>
-              <select formControlName="seniorityLevel" class="text-description-small">
+              <select formControlName="seniorityLevel" class="text-description-small form-select">
                 <option value="">Select seniority level</option>
                 <option *ngFor="let level of getSeniorityIds()" [value]="level">
                   {{ getSeniorityName(level) }}
@@ -36,8 +36,10 @@
               </select>
             </div>
 
-            <div class="scaffold-text">
-              <button class="btn-danger" [disabled]="resumeForm.invalid">Generate template</button>
+            <div class="row d-flex justify-content-center">
+              <button class="btn btn-outline-dark generate-btn" [disabled]="resumeForm.invalid">
+                Generate template
+              </button>
             </div>
           </form>
         </div>

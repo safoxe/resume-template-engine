@@ -1,5 +1,5 @@
 .popup-body {
-  min-width: 500px;
+  min-width: 400px;
 }
 
 .engine-header {
@@ -12,7 +12,7 @@
 }
 
 .heading {
-  padding-bottom: 8px;
+  padding-bottom: 0.4rem;
   align-items: baseline;
   font-style: normal;
   font-weight: 600;
@@ -47,7 +47,8 @@
 }
 
 .scaffold-text {
-  padding-left: 6%;
+  margin-bottom: 0.7rem;
+  margin-left: 0.5rem;
 }
 
 .header-text {
@@ -75,4 +76,10 @@
   font-size: 12px;
   line-height: 20px;
   color: #666666;
+}
+
+.generate-btn {
+  margin-top: 0.2rem;
+  font-size: 14px;
+  text-transform: capitalize;
 }

@@ -13,6 +13,6 @@ export class ResourceToolsComponent implements OnInit {
   ngOnInit(): void {}
 
   openCoverImagePopUp(): void {
-    this.dialog.open(CoverImageDialogComponent);
+    this.dialog.open(CoverImageDialogComponent, { panelClass: 'custom-dialog-container' });
   }
 }

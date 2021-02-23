@@ -7,12 +7,7 @@ module.exports = {
         project: ['tsconfig.*?.json', 'e2e/tsconfig.json'],
         createDefaultProgram: true,
       },
-      extends: [
-        'plugin:@angular-eslint/recommended',
-        'airbnb-typescript/base',
-        'prettier/@typescript-eslint',
-        'plugin:prettier/recommended',
-      ],
+      extends: ['airbnb-typescript/base', 'plugin:prettier/recommended'],
       rules: {
         '@typescript-eslint/no-unused-vars': 'off',
         'import/prefer-default-export': 'off',

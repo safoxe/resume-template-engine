@@ -65,3 +65,14 @@
 .technologies-text {
   font-style: italic;
 }
+
+.add-btn {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.add-btn:hover {
+  transform: scale(1.2);
+}

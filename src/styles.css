@@ -2,3 +2,17 @@
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.spinner-backdrop {
+  background-color: white;
+  opacity: 0.85;
+}
+
+.custom-dialog-container .mat-dialog-container {
+  padding: 16px;
+  padding-top: 10px;
+  margin: 0px;
+}
+
+::selection {
+  background: orange;
+}
