@@ -13,4 +13,5 @@ export interface GeneratedResumeData {
   seniorityLevel: SeniorityId;
   mainTechnology: string;
   additionalTechnologies: string[];
+  description: string;
 }

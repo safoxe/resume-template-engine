@@ -26,14 +26,7 @@ export class ResumeTemplateComponent extends BaseComponent implements OnInit {
     location: this.fb.control('Location - ADD'),
     yearsOfExperience: this.fb.control('5+ to be calculated'),
     recruiter: this.fb.control('Responsible Recruiter - ADD'),
-    aboutProject: this.fb.control(
-      `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-         nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-         deserunt mollit anim id est laborum.`,
-    ),
+    aboutProject: this.fb.control(''),
   });
 
   constructor(
@@ -54,6 +47,7 @@ export class ResumeTemplateComponent extends BaseComponent implements OnInit {
             positions[this.resumeData.positionType]
           }`,
         );
+      this.form.get('aboutProject').setValue(this.resumeData.description);
     }
     this.resumeCoverService.updateResumeCoverPath
       .pipe(takeUntil(this.unsubscribe$))

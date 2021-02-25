@@ -10,7 +10,18 @@
   border-right: 0.25em solid grey;
   border-bottom: 0.25em solid grey;
   border-left: 0.25em solid orange;
-  animation: loadingCircle 1.1s infinite linear;
+  height: 40px;
+  width: 40px;
+  animation: loadingCircle 1.1s infinite;
+}
+
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .loader-circle::after {

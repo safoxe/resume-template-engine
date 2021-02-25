@@ -55,6 +55,7 @@
   border: 0.23rem solid black;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
+  min-width: 95%;
 }
 
 .technologies-logo {
