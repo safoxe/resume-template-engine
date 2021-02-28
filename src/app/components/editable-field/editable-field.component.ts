@@ -4,7 +4,7 @@ import { ControlNameValue } from './types/control-value.type';
 @Component({
   selector: 'app-editable-field',
   templateUrl: './editable-field.component.html',
-  styleUrls: ['./editable-field.component.css'],
+  styleUrls: ['./editable-field.component.scss'],
 })
 export class EditableFieldComponent {
   @Input() value: string;

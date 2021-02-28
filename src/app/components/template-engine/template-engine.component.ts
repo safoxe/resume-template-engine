@@ -6,7 +6,7 @@ import { GeneratedResumeData, Resume } from '../scaffold-menu/types/resume-data.
 @Component({
   selector: 'app-template-engine',
   templateUrl: './template-engine.component.html',
-  styleUrls: ['./template-engine.component.css'],
+  styleUrls: ['./template-engine.component.scss'],
 })
 export class TemplateEngineComponent implements OnInit {
   resumeData: GeneratedResumeData;

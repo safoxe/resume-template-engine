@@ -13,7 +13,7 @@ import { seniorityTypes } from '../scaffold-menu/types/seniority-level.type';
 @Component({
   selector: 'app-resume-template',
   templateUrl: './resume-template.component.html',
-  styleUrls: ['./resume-template.component.css'],
+  styleUrls: ['./resume-template.component.scss'],
 })
 export class ResumeTemplateComponent extends BaseComponent implements OnInit {
   @Input() resumeData: GeneratedResumeData = null;

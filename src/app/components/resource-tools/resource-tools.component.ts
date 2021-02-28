@@ -5,7 +5,7 @@ import { CoverImageDialogComponent } from '../cover-image-dialog/cover-image-dia
 @Component({
   selector: 'app-resource-tools',
   templateUrl: './resource-tools.component.html',
-  styleUrls: ['./resource-tools.component.css'],
+  styleUrls: ['./resource-tools.component.scss'],
 })
 export class ResourceToolsComponent implements OnInit {
   constructor(private dialog: MatDialog) {}

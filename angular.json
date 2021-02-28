@@ -112,5 +112,10 @@
       }
     }
   },
-  "defaultProject": "engine-plugin"
+  "defaultProject": "engine-plugin",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

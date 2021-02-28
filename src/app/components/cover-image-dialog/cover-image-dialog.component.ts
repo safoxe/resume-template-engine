@@ -6,7 +6,7 @@ import { images } from './data/images-paths';
 @Component({
   selector: 'app-cover-image-dialog',
   templateUrl: './cover-image-dialog.component.html',
-  styleUrls: ['./cover-image-dialog.component.css'],
+  styleUrls: ['./cover-image-dialog.component.scss'],
 })
 export class CoverImageDialogComponent implements OnInit {
   imagePaths: readonly string[] = images;
