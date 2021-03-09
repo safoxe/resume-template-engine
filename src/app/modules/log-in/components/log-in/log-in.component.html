@@ -1,0 +1,40 @@
+<div class="container log-in">
+  <span class="header-log-in">Sign in</span>
+  <div class="log-in-form row">
+    <form (ngSubmit)="logIn()" [attr.formGroup]="logInForm">
+      <input
+        class="col-12 col-md-12"
+        type="email"
+        class="form-control"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <input
+        class="col-12 col-md-12"
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        formControlName="password"
+      />
+
+      <a class="col-12 col-md-12" [routerLink]="['/forgot-password']">Forgot your password?</a>
+      <div class="w-100"></div>
+      <button
+        class="col-12 col-md-12"
+        type="button"
+        (click)="logIn()"
+        [disabled]="!logInForm.valid"
+        class="btn btn-warning"
+      >
+        Sign in
+      </button>
+    </form>
+  </div>
+
+  <div class="sign-up-controls row">
+    <span class="col-12 col-md-12 text-underline">Or</span>
+    <button type="button" class="btn btn-secondary col-12 col-md-12">Sign in with Google</button>
+
+    <a class="col-12 col-md-12" [routerLink]="['register']">Not a member yet? Sign up!</a>
+  </div>
+</div>

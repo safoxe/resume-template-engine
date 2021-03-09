@@ -20,7 +20,6 @@ import { FocusDirective } from './components/editable-field/directives/focus.dir
 import { CoverImageDialogComponent } from './components/cover-image-dialog/cover-image-dialog.component';
 import { TechnologiesDialogComponent } from './components/technologies-dialog/technologies-dialog.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { LogInComponent } from './components/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +34,6 @@ import { LogInComponent } from './components/log-in/log-in.component';
     CoverImageDialogComponent,
     TechnologiesDialogComponent,
     SpinnerComponent,
-    LogInComponent,
   ],
   imports: [
     BrowserModule,

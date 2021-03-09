@@ -1,0 +1,57 @@
+$main-color-orange: #ff9c2d;
+$additional-color-gray: #9ba5a9;
+$text-color: #000000;
+@mixin button-annimation-orange {
+  &:hover {
+    box-shadow: 0px 2px 12px darken($color: $main-color-orange, $amount: 5);
+  }
+}
+
+@mixin button-annimation-gray {
+  &:hover {
+    box-shadow: 0px 2px 12px darken($color: $additional-color-gray, $amount: 5);
+  }
+}
+
+@mixin links-underline {
+  text-decoration: underline;
+  color: $text-color;
+  font-weight: lighter;
+}
+
+.log-in-form {
+  button {
+    @include button-annimation-orange();
+    background-color: $main-color-orange;
+  }
+  a {
+    @include links-underline();
+  }
+}
+
+.sign-up-controls {
+  button {
+    @include button-annimation-gray();
+    background-color: $additional-color-gray;
+    border: #9ba5a9;
+  }
+  a {
+    @include links-underline();
+  }
+}
+
+.log-in {
+  width: 20%;
+  margin-top: 17%;
+  margin-right: 65%;
+}
+
+.text-underline {
+  @include links-underline();
+  text-transform: uppercase;
+}
+
+.header-log-in {
+  font-weight: 650;
+  font-size: 1.8rem;
+}

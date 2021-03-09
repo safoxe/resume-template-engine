@@ -4,7 +4,7 @@ import { ScaffoldMenuComponent } from './components/scaffold-menu/scaffold-menu.
 import { TemplateEngineComponent } from './components/template-engine/template-engine.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'scaffold-menu', pathMatch: 'full' },
+  { path: '', redirectTo: 'log-in', pathMatch: 'full' },
   {
     path: 'scaffold-menu',
     component: ScaffoldMenuComponent,
@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'template-engine',
     component: TemplateEngineComponent,
+  },
+  {
+    path: 'log-in',
+    loadChildren: () => import('./modules/log-in/log-in.module').then((m) => m.LogInModule),
   },
 ];
 
