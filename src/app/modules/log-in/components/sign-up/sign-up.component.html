@@ -1,46 +1,55 @@
 <div class="container log-in">
-  <span class="header-log-in">Sign up</span>
-  <div class="log-in-form row">
-    <form (ngSubmit)="signUp()" [attr.formGroup]="signUpForm">
-      <input
-        class="col-12 col-md-12"
-        type="text"
-        class="form-control"
-        placeholder="User name"
-        formControlName="userName"
-      />
-      <input
-        class="col-12 col-md-12"
-        type="email"
-        class="form-control"
-        placeholder="Email"
-        formControlName="email"
-      />
-      <input
-        class="col-12 col-md-12"
-        type="password"
-        class="form-control"
-        placeholder="Password"
-        formControlName="password"
-      />
+  <span class="header-log-in  d-flex justify-content-center">Sign up</span>
+  <div class="log-in-form row d-flex justify-content-center">
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+      <div>
+        <label class="input-label" for="userName">User name</label>
+        <div class="input-validation"
+          [attr.input-status]="signUpForm.get('userName').touched && signUpForm.get('userName').invalid ? 'error' : ''">
+          <input id="userName" class="input-field" type="text" formControlName="userName" />
+        </div>
+        <div *ngIf="signUpForm.get('userName').touched && signUpForm.get('userName').errors?.required"
+          class="input-error">
+          Required
+        </div>
+      </div>
+      <div>
+        <label class="input-label" for="email">Email</label>
+        <div class="input-validation"
+          [attr.input-status]="signUpForm.get('email').touched && signUpForm.get('email').invalid ? 'error' : ''">
+          <input id="email" type="email" class="input-field" formControlName="email" />
+        </div>
+        <div *ngIf="signUpForm.get('email').touched && signUpForm.get('email').errors?.required" class="input-error">
+          Required
+        </div>
+        <div *ngIf="signUpForm.get('email').touched && signUpForm.get('email').errors?.email" class="input-error">
+          Incorrect email format
+        </div>
+      </div>
+      <div>
+        <label class="input-label" for="password">Password</label>
+        <div class="input-validation"
+          [attr.input-status]="signUpForm.get('password').touched && signUpForm.get('password').invalid ? 'error' : ''">
+          <input id="password" class="input-field" type="password" formControlName="password" />
+        </div>
+        <div *ngIf="signUpForm.get('password').touched && signUpForm.get('password').errors?.required"
+          class="input-error">
+          Required
+        </div>
+      </div>
 
-      <div class="w-100"></div>
-      <button
-        class="col-12 col-md-12"
-        type="button"
-        (click)="signUp()"
-        [disabled]="!signUpForm.valid"
-        class="btn btn-warning"
-      >
+      <button class="btn col-12 col-md-12" type="submit" [disabled]="signUpForm.invalid">
         Sign up
       </button>
     </form>
   </div>
 
-  <div class="sign-up-controls row">
-    <span class="col-12 col-md-12 text-underline">Or</span>
-    <button type="button" class="btn btn-secondary col-12 col-md-12">Sign up with Google</button>
 
-    <a class="col-12 col-md-12" [routerLink]="['/']">Already a member? Sign up!</a>
+  <div class="sign-up-controls row d-flex justify-content-center">
+    <span class="text-underline d-flex justify-content-center">Or</span>
+
+    <button type="button" class="btn col-12 col-md-12">Sign up with Google</button>
+
+    <a class="d-flex justify-content-center" [routerLink]="['/log-in']">Already a member? Sign in!</a>
   </div>
 </div>

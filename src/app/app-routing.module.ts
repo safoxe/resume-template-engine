@@ -17,6 +17,18 @@ const routes: Routes = [
     path: 'log-in',
     loadChildren: () => import('./modules/log-in/log-in.module').then((m) => m.LogInModule),
   },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
+  {
+    path: 'project-creation',
+    loadChildren: () =>
+      import('./modules/project-creation/project-creation.module').then(
+        (m) => m.ProjectCreationModule,
+      ),
+  },
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -7,14 +8,14 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./log-in.component.scss'],
 })
 export class LogInComponent {
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   logInForm = this.fb.group({
-    email: this.fb.control('gfh', [Validators.required]),
-    password: this.fb.control('gdfg', [Validators.required]),
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]],
   });
 
   logIn(): void {
-    console.log(this.logInForm);
+    this.router.navigate(['/dashboard']);
   }
 }

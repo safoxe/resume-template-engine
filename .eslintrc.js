@@ -1,10 +1,9 @@
 module.exports = {
-  root: true,
   overrides: [
     {
       files: ['*.ts'],
       parserOptions: {
-        project: ['tsconfig.*?.json', 'e2e/tsconfig.json'],
+        project: ['tsconfig.app.json'],
         createDefaultProgram: true,
       },
       extends: ['airbnb-typescript/base', 'plugin:prettier/recommended'],

@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+$error-input: #DD001B;
+$input-height: 2rem;
+$input-border-width: 0.12rem;
+$input-border-color: #9BA5A9;
+$input-focus-color: #FF9C2D;
+$opacity-disabled: 0.3;
+$input-label-color: #9BA5A9;
+$input-label-font-weight: 400;
+$input-label-font-size: 0.8rem;
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.spinner-backdrop {
+  background-color: white;
+  opacity: 0.85;
+}
+
+.custom-dialog-container .mat-dialog-container {
+  padding: 16px;
+  padding-top: 10px;
+  margin: 0px;
+}
+
+::selection {
+  background: orange;
+}
+
+.input-validation {
+  &[input-status="error"] {
+    border: 0;
+    .input-field {
+    border-bottom-color: $error-input;
+    }
+  }
+}
+
+.error-message {
+  color: $error-input;
+}
+
+.input-field {
+  display: inline-block;
+  width: 100%;
+  height: $input-height;
+  padding: 0;
+  border: 0;
+  border-bottom-width: $input-border-width;
+  border-bottom-style: solid;
+  border-bottom-color: $input-border-color;
+
+  &:focus, &:active {
+    outline: none;
+    border-bottom-color: $input-focus-color;
+  }
+
+  &:disabled {
+    cursor: pointer;
+    opacity: $opacity-disabled;
+  }
+}
+
+.input-label {
+  color: $input-label-color;
+  font-weight: $input-label-font-weight;
+  margin-bottom: 0;
+  font-size: $input-label-font-size;
+}
+
+.input-error {
+  color: $error-input;
+  font-size: $input-label-font-size;
+}
