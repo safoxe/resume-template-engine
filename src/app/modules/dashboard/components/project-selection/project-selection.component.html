@@ -1,3 +1,9 @@
 <div class="project-selection-container">
-  <div *ngFor="let project of projects" class="project-block"></div>
+  <div class="projects-block">
+    <div *ngFor="let project of projects">
+      <div class="project">
+        <span class="project-name">{{ project }}</span>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,24 +1,25 @@
 <app-svg-sprite></app-svg-sprite>
-<div>
-  <router-outlet></router-outlet>
-</div>
-<!--
-<ng-template *ngIf="layout === layoutTypes.default">
-  <div>{{layout}}</div>
+
+<ng-template [ngIf]="layout === layoutTypes.default">
   <div class="default">
     <router-outlet></router-outlet>
   </div>
 </ng-template>
 
-<ng-template *ngIf="layout === layoutTypes.logIn">
-  <div>{{layout}}</div>
+<ng-template [ngIf]="layout === layoutTypes.logIn">
   <div class="logIn">
     <router-outlet></router-outlet>
   </div>
 </ng-template>
 
-<ng-template *ngIf="layout === layoutTypes.signUp">
+<ng-template [ngIf]="layout === layoutTypes.signUp">
   <div class="signUp">
     <router-outlet></router-outlet>
   </div>
-</ng-template> -->
+</ng-template>
+
+<ng-template [ngIf]="layout === layoutTypes.none">
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-selection.component.scss'],
 })
 export class ProjectSelectionComponent implements OnInit {
-  projects: string[] = [];
+  projects: string[] = ['sdsd', 'das'];
+
   ngOnInit(): void {}
 }

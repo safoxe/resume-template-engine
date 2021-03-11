@@ -5,6 +5,13 @@ $min-input-width: 300px;
 @mixin button-annimation($value) {
   box-shadow: 0px 2px 12px darken($color: $value, $amount: 5);
 }
+@mixin image-annimation {
+  transition: all 0.3s ease-in-out 0s;
+  &:hover {
+    transform: rotate(60deg);
+    transition: all 0.3s ease-in-out 0s;
+  }
+}
 
 button {
   margin-bottom: 1rem;
@@ -28,12 +35,6 @@ button {
 .log-in-form {
   align-content: center;
   min-width: $min-input-width;
-  button {
-    &:hover:enabled {
-      @include button-annimation($main-color-orange);
-    }
-    background-color: $main-color-orange;
-  }
   a {
     @include links-underline();
   }
@@ -47,25 +48,26 @@ button {
   }
 }
 
-.sign-up-controls {
-  min-width: $min-input-width;
-  button {
-    margin-top: 0.5rem;
-    &:hover:enabled {
-      @include button-annimation($additional-color-gray);
-    }
-    background-color: $additional-color-gray;
-    border: #9ba5a9;
+.log-in-btn {
+  &:hover:enabled {
+    @include button-annimation($main-color-orange);
   }
-  a {
-    @include links-underline();
-  }
+  background-color: $main-color-orange;
 }
 
-.log-in {
-  width: min-content;
-  margin-top: 8%;
-  margin-left: 60%;
+.sign-up-controls {
+  margin-top: 0.5rem;
+  max-width: $min-input-width;
+  &:hover:enabled {
+    @include button-annimation($additional-color-gray);
+  }
+  background-color: $additional-color-gray;
+  border: #9ba5a9;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
 }
 
 .text-underline {
@@ -77,4 +79,17 @@ button {
   font-weight: 630;
   font-size: 1.8rem;
   margin-bottom: 0.8rem;
+}
+
+.img-background {
+  margin: 0;
+  padding: 0;
+  img {
+    @include image-annimation();
+  }
+}
+
+.log-in-block {
+  padding-top: 10%;
+  padding-left: 62%;
 }

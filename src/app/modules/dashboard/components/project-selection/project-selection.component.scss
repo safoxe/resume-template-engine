@@ -1,0 +1,24 @@
+$main-color-orange: #ff9c2d;
+$additional-color-gray: #9ba5a9;
+$text-color: #000000;
+.projects-block {
+  border: 0.16rem solid $additional-color-gray;
+  background-image: url('../../../../../assets/background-svgs/project-selection-background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.project {
+  background-color: $main-color-orange;
+  opacity: 60%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  min-height: 100px;
+  &:hover {
+    background-color: darken($color: $main-color-orange, $amount: 5);
+    opacity: 80%;
+    cursor: pointer;
+  }
+}

@@ -16,6 +16,7 @@ export class SignUpComponent {
   });
 
   signUp(): void {
+    // eslint-disable-next-line no-console
     console.log(this.signUpForm);
   }
 }

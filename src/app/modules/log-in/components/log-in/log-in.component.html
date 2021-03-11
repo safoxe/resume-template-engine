@@ -1,49 +1,75 @@
-<div>
-  <div class="container log-in">
-    <span class="header-log-in d-flex justify-content-center">Sign in</span>
-    <div class="log-in-form row d-flex justify-content-center">
-      <form [formGroup]="logInForm" (ngSubmit)="logIn()">
-        <div>
-          <label class="input-label" for="email">Email</label>
-          <div class="input-validation" [attr.input-status]="
-            logInForm.get('email').touched && logInForm.get('email').invalid ? 'error' : ''
-          ">
-            <input id="email" type="email" class="input-field" formControlName="email" />
+<div class="container-fluid">
+  <div class="log-in-block">
+    <div class="col-6 col-md-6 col-lg-6">
+      <span class="header-log-in d-flex justify-content-center">Sign in</span>
+      <div class="log-in-form d-flex justify-content-center">
+        <form [formGroup]="logInForm" (ngSubmit)="logIn()">
+          <div>
+            <label class="input-label" for="email">Email</label>
+            <div
+              class="input-validation"
+              [attr.input-status]="
+                logInForm.get('email').touched && logInForm.get('email').invalid ? 'error' : ''
+              "
+            >
+              <input id="email" type="email" class="input-field" formControlName="email" />
+            </div>
+            <div
+              *ngIf="logInForm.get('email').touched && logInForm.get('email').errors?.required"
+              class="input-error"
+            >
+              Required
+            </div>
+            <div
+              *ngIf="logInForm.get('email').touched && logInForm.get('email').errors?.email"
+              class="input-error"
+            >
+              Incorrect email format
+            </div>
           </div>
-          <div *ngIf="logInForm.get('email').touched && logInForm.get('email').errors?.required" class="input-error">
-            Required
+          <div>
+            <label class="input-label" for="password">Password</label>
+            <div
+              class="input-validation"
+              [attr.input-status]="
+                logInForm.get('password').touched && logInForm.get('password').invalid
+                  ? 'error'
+                  : ''
+              "
+            >
+              <input id="password" class="input-field" type="password" formControlName="password" />
+            </div>
+            <div
+              *ngIf="
+                logInForm.get('password').touched && logInForm.get('password').errors?.required
+              "
+              class="input-error"
+            >
+              Required
+            </div>
           </div>
-          <div *ngIf="logInForm.get('email').touched && logInForm.get('email').errors?.email" class="input-error">
-            Incorrect email format
-          </div>
-        </div>
-        <div>
-          <label class="input-label" for="password">Password</label>
-          <div class="input-validation" [attr.input-status]="
-            logInForm.get('password').touched && logInForm.get('password').invalid ? 'error' : ''
-          ">
-            <input id="password" class="input-field" type="password" formControlName="password" />
-          </div>
-          <div *ngIf="logInForm.get('password').touched && logInForm.get('password').errors?.required"
-            class="input-error">
-            Required
-          </div>
-        </div>
 
-        <a class="d-flex justify-content-center" [routerLink]="['/forgot-password']">Forgot your password?</a>
-        <div class="w-100"></div>
-        <button class="btn col-12 col-md-12" type="submit" [disabled]="logInForm.invalid">
-          Sign in
-        </button>
-      </form>
-    </div>
-
-    <div class="sign-up-controls row d-flex justify-content-center">
-      <span class="text-underline d-flex justify-content-center">Or</span>
-
-      <button type="button" class="btn col-12 col-md-12">Sign in with Google</button>
-
-      <a class="d-flex justify-content-center" [routerLink]="['/sign-up']">Not a member yet? Sign up!</a>
+          <a class="d-flex justify-content-center" [routerLink]="['/forgot-password']"
+            >Forgot your password?</a
+          >
+          <div class="w-100"></div>
+          <button
+            class="btn col-12 col-md-12 log-in-btn"
+            type="submit"
+            [disabled]="logInForm.invalid"
+          >
+            Sign in
+          </button>
+          <span class="d-flex justify-content-center text-underline">Or</span>
+          <div class="w-100"></div>
+          <button class="btn col-12 col-md-12 sign-up-controls" type="button">
+            Sign in with Google
+          </button>
+          <a class="d-flex justify-content-center" [routerLink]="['/sign-up']"
+            >Not a member yet? Sign up!</a
+          >
+        </form>
+      </div>
     </div>
   </div>
 </div>

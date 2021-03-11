@@ -28,6 +28,7 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () =>
       import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
+    data: { layout: Layout.none },
   },
   {
     path: 'project-creation',
