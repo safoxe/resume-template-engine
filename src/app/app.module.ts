@@ -9,7 +9,6 @@ import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { ScaffoldMenuComponent } from './components/scaffold-menu/scaffold-menu.component';
 import { TemplateEngineComponent } from './components/template-engine/template-engine.component';
 import { ManagementToolsComponent } from './components/management-tools/management-tools.component';
@@ -21,10 +20,10 @@ import { CoverImageDialogComponent } from './components/cover-image-dialog/cover
 import { TechnologiesDialogComponent } from './components/technologies-dialog/technologies-dialog.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SvgSpriteComponent } from './components/svg-sprite/svg-sprite.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     ScaffoldMenuComponent,
     TemplateEngineComponent,
     ManagementToolsComponent,
@@ -36,6 +35,7 @@ import { SvgSpriteComponent } from './components/svg-sprite/svg-sprite.component
     TechnologiesDialogComponent,
     SpinnerComponent,
     SvgSpriteComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +51,6 @@ import { SvgSpriteComponent } from './components/svg-sprite/svg-sprite.component
     MatOptionModule,
   ],
   providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }],
-  bootstrap: [AppComponent],
+  bootstrap: [MainComponent],
 })
 export class AppModule {}

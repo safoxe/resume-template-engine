@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-$error-input: #DD001B;
+$error-input: #dd001b;
 $input-height: 2rem;
 $input-border-width: 0.12rem;
-$input-border-color: #9BA5A9;
-$input-focus-color: #FF9C2D;
+$input-border-color: #9ba5a9;
+$input-focus-color: #ff9c2d;
 $opacity-disabled: 0.3;
-$input-label-color: #9BA5A9;
+$input-label-color: #9ba5a9;
 $input-label-font-weight: 400;
 $input-label-font-size: 0.8rem;
 
@@ -28,10 +28,10 @@ $input-label-font-size: 0.8rem;
 }
 
 .input-validation {
-  &[input-status="error"] {
+  &[input-status='error'] {
     border: 0;
     .input-field {
-    border-bottom-color: $error-input;
+      border-bottom-color: $error-input;
     }
   }
 }
@@ -50,7 +50,8 @@ $input-label-font-size: 0.8rem;
   border-bottom-style: solid;
   border-bottom-color: $input-border-color;
 
-  &:focus, &:active {
+  &:focus,
+  &:active {
     outline: none;
     border-bottom-color: $input-focus-color;
   }
