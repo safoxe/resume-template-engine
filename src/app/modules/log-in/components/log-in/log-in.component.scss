@@ -2,27 +2,11 @@ $main-color-orange: #ff9c2d;
 $additional-color-gray: #9ba5a9;
 $text-color: #000000;
 $min-input-width: 300px;
-@mixin button-annimation($value) {
-  box-shadow: 0px 2px 12px darken($color: $value, $amount: 5);
-}
 @mixin image-annimation {
   transition: all 0.3s ease-in-out 0s;
   &:hover {
     transform: rotate(60deg);
     transition: all 0.3s ease-in-out 0s;
-  }
-}
-
-button {
-  margin-bottom: 1rem;
-  &:focus,
-  &:active {
-    outline: none;
-  }
-
-  &:disabled {
-    cursor: pointer;
-    opacity: 0.3;
   }
 }
 
@@ -48,21 +32,9 @@ button {
   }
 }
 
-.log-in-btn {
-  &:hover:enabled {
-    @include button-annimation($main-color-orange);
-  }
-  background-color: $main-color-orange;
-}
-
 .sign-up-controls {
   margin-top: 0.5rem;
   max-width: $min-input-width;
-  &:hover:enabled {
-    @include button-annimation($additional-color-gray);
-  }
-  background-color: $additional-color-gray;
-  border: #9ba5a9;
 }
 
 .container-fluid {

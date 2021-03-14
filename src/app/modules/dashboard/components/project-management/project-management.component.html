@@ -1,6 +1,16 @@
-<div>
-  <span>Want to create a new project? Easy!</span>
-  <button [routerLink]="['/project-creation']">Create a new project</button>
-  <span>Look for a project insode your company!</span>
-  <button>Search for a project</button>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <span class="project-magament-text">Want to create a new project? Easy!</span>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <button class="btn main-btn project-magement-btn" [routerLink]="['/project-creation']">
+      Create a new project
+    </button>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <span class="project-magament-text">Look for a project inside your company!</span>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <button class="btn additional-btn project-magement-btn">Search for a project</button>
+  </div>
 </div>

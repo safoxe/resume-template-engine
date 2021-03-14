@@ -2,7 +2,18 @@
   <div class="projects-block">
     <div *ngFor="let project of projects">
       <div class="project">
-        <span class="project-name">{{ project }}</span>
+        <div class="media">
+          <img
+            class="mr-3 project-logo"
+            src="../../../../../assets/project-logo.jpg"
+            alt="Generic placeholder image"
+          />
+          <div class="media-body">
+            <h5 class="mt-0">{{ project }}</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+            sollicitudin.
+          </div>
+        </div>
       </div>
     </div>
   </div>

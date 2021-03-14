@@ -8,6 +8,11 @@ $opacity-disabled: 0.3;
 $input-label-color: #9ba5a9;
 $input-label-font-weight: 400;
 $input-label-font-size: 0.8rem;
+$main-color-orange: #ff9c2d;
+$additional-color-gray: #dbdbdb;
+@mixin button-annimation($value) {
+  box-shadow: 0px 2px 12px darken($color: $value, $amount: 5);
+}
 
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -72,4 +77,43 @@ $input-label-font-size: 0.8rem;
 .input-error {
   color: $error-input;
   font-size: $input-label-font-size;
+}
+
+.main-btn {
+  button {
+    margin-bottom: 1rem;
+    &:focus,
+    &:active {
+      outline: none;
+    }
+
+    &:disabled {
+      cursor: pointer;
+      opacity: 0.3;
+    }
+  }
+  &:hover:enabled {
+    @include button-annimation($main-color-orange);
+  }
+  background-color: $main-color-orange;
+}
+
+.additional-btn {
+  button {
+    margin-bottom: 1rem;
+    &:focus,
+    &:active {
+      outline: none;
+    }
+
+    &:disabled {
+      cursor: pointer;
+      opacity: 0.3;
+    }
+  }
+  &:hover:enabled {
+    @include button-annimation($additional-color-gray);
+  }
+  background-color: $additional-color-gray;
+  border: #dbdbdb;
 }

@@ -21,6 +21,7 @@ import { TechnologiesDialogComponent } from './components/technologies-dialog/te
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SvgSpriteComponent } from './components/svg-sprite/svg-sprite.component';
 import { MainComponent } from './components/main/main.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MainComponent } from './components/main/main.component';
     SpinnerComponent,
     SvgSpriteComponent,
     MainComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

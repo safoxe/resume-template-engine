@@ -1,0 +1,27 @@
+$btn-color: #edb200;
+.logo-text {
+  color: white;
+  font-weight: 500;
+  font-size: 4.6rem;
+  text-shadow: 0.5px 0.5px black;
+}
+
+.logo-img {
+  margin-right: -4px;
+  width: 200px;
+  height: 200px;
+}
+
+.home-btn {
+  border: 0.5rem solid white;
+  color: white;
+  min-width: 300px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  margin-top: 4rem;
+  background-color: $btn-color;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

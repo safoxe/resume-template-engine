@@ -7,10 +7,11 @@
   padding: 0;
 }
 
-.default {
+.home {
   @include image-prop();
-  background-image: url('../../../assets/background-svgs/default-background.svg');
+  background-image: url('../../../assets/background-svgs/background-home-2-overlay.jpg');
 }
+
 .logIn {
   @include image-prop();
   background-image: url('../../../assets/background-svgs/log-in-background.svg');

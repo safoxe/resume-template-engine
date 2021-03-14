@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 import { Layout } from './components/main/types/layout.type';
 import { ScaffoldMenuComponent } from './components/scaffold-menu/scaffold-menu.component';
 import { TemplateEngineComponent } from './components/template-engine/template-engine.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'log-in', pathMatch: 'full' },
+  { path: '', component: HomeComponent, data: { layout: Layout.home } },
   {
     path: 'scaffold-menu',
     component: ScaffoldMenuComponent,

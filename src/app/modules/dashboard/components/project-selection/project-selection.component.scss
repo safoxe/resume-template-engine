@@ -1,24 +1,36 @@
 $main-color-orange: #ff9c2d;
 $additional-color-gray: #9ba5a9;
 $text-color: #000000;
+$project-height: 100px;
+$project-block-padding: 0.8rem;
+
 .projects-block {
   border: 0.16rem solid $additional-color-gray;
   background-image: url('../../../../../assets/background-svgs/project-selection-background.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: $project-height * 5;
+  min-width: $project-height * 5;
+  padding: $project-block-padding;
 }
 
 .project {
   background-color: $main-color-orange;
-  opacity: 60%;
-  margin-top: 0.5rem;
+  div.media-body {
+    opacity: 60%;
+  }
   margin-bottom: 0.8rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  min-height: 100px;
+  min-height: $project-height;
   &:hover {
     background-color: darken($color: $main-color-orange, $amount: 5);
     opacity: 80%;
     cursor: pointer;
   }
+}
+
+.project-logo {
+  max-width: 80px;
+  max-height: 80px;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
 }
