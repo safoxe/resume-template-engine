@@ -3,7 +3,7 @@ $btn-color: #edb200;
   color: white;
   font-weight: 500;
   font-size: 4.6rem;
-  text-shadow: 0.5px 0.5px black;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .logo-img {
@@ -21,6 +21,7 @@ $btn-color: #edb200;
   padding: 0.5rem;
   margin-top: 4rem;
   background-color: $btn-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   &:hover {
     transform: scale(1.1);
   }

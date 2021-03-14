@@ -1,15 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 $error-input: #dd001b;
 $input-height: 2rem;
-$input-border-width: 0.12rem;
-$input-border-color: #9ba5a9;
-$input-focus-color: #ff9c2d;
+$input-border-width: 1px;
+$input-border-color: #8692a6;
+$input-focus-color: #ffc107;
 $opacity-disabled: 0.3;
-$input-label-color: #9ba5a9;
+$input-label-color: #8692a6;
 $input-label-font-weight: 400;
 $input-label-font-size: 0.8rem;
-$main-color-orange: #ff9c2d;
-$additional-color-gray: #dbdbdb;
+$main-color-orange: #ffc107;
+$additional-color-gray: #ffffff;
 @mixin button-annimation($value) {
   box-shadow: 0px 2px 12px darken($color: $value, $amount: 5);
 }
@@ -36,7 +36,7 @@ $additional-color-gray: #dbdbdb;
   &[input-status='error'] {
     border: 0;
     .input-field {
-      border-bottom-color: $error-input;
+      border-color: $error-input;
     }
   }
 }
@@ -50,15 +50,15 @@ $additional-color-gray: #dbdbdb;
   width: 100%;
   height: $input-height;
   padding: 0;
-  border: 0;
-  border-bottom-width: $input-border-width;
-  border-bottom-style: solid;
-  border-bottom-color: $input-border-color;
+  border: $input-border-width solid $input-border-color;
+  border-radius: 6px;
+  min-width: 400px;
+  min-height: 46px;
 
   &:focus,
   &:active {
     outline: none;
-    border-bottom-color: $input-focus-color;
+    border-color: $input-focus-color;
   }
 
   &:disabled {
@@ -96,6 +96,9 @@ $additional-color-gray: #dbdbdb;
     @include button-annimation($main-color-orange);
   }
   background-color: $main-color-orange;
+  border-radius: 6px;
+  border: none;
+  outline: 0 !important;
 }
 
 .additional-btn {
@@ -115,5 +118,8 @@ $additional-color-gray: #dbdbdb;
     @include button-annimation($additional-color-gray);
   }
   background-color: $additional-color-gray;
-  border: #dbdbdb;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  border: none;
+  outline: 0 !important;
 }

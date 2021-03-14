@@ -1,5 +1,7 @@
-$main-color-orange: #ff9c2d;
+$main-color-orange: #ffc107;
 $additional-color-gray: #9ba5a9;
+$quote-text-color: #696f79;
+$additional-text-color: #8692a6;
 $text-color: #000000;
 $min-input-width: 300px;
 @mixin image-annimation {
@@ -30,11 +32,15 @@ $min-input-width: 300px;
   form > div {
     margin-bottom: 0.8rem;
   }
-}
 
-.sign-up-controls {
-  margin-top: 0.5rem;
-  max-width: $min-input-width;
+  button {
+    min-width: 400px;
+    min-height: 54px;
+    margin-bottom: 1rem;
+  }
+  .sign-in-btn {
+    margin-top: 0.7rem;
+  }
 }
 
 .container-fluid {
@@ -50,7 +56,7 @@ $min-input-width: 300px;
 .header-log-in {
   font-weight: 630;
   font-size: 1.8rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.2rem;
 }
 
 .img-background {
@@ -62,6 +68,69 @@ $min-input-width: 300px;
 }
 
 .log-in-block {
+  padding-top: 4%;
+  padding-left: 6%;
+  .add-text {
+    color: $additional-text-color;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 28px;
+  }
+  .social-media-btn {
+    button {
+      min-width: 55px;
+      min-height: 55px;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.logo {
+  img {
+    max-width: 110px;
+    max-height: 110px;
+    margin-bottom: 1rem;
+  }
+  padding-left: 15%;
+  padding-top: 3%;
+  .logo-text {
+    color: $main-color-orange;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 85px;
+  }
+}
+
+@mixin quote-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 38px;
+  color: $quote-text-color;
+}
+
+.quote {
   padding-top: 10%;
-  padding-left: 5%;
+  padding-left: 2%;
+  .colon {
+    max-width: 31px;
+    max-height: 21px;
+  }
+  .quote-text {
+    @include quote-text();
+    padding-top: 0.2rem;
+  }
+
+  .autor {
+    @include quote-text();
+    margin-top: 3rem;
+  }
+}
+
+.figure-rect {
+  margin-right: 15%;
 }
