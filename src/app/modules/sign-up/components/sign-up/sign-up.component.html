@@ -1,92 +1,166 @@
 <div class="container-fluid">
-  <div class="log-in-block">
-    <div class="col-6 col-md-6 col-lg-6">
-      <span class="header-log-in d-flex justify-content-center">Sign up</span>
-      <div class="log-in-form d-flex justify-content-center">
-        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
-          <div>
-            <label class="input-label" for="userName">User name</label>
-            <div
-              class="input-validation"
-              [attr.input-status]="
+  <div class="row sign-up-block h-100 no-gutters d-flex align-items-center">
+    <div class="col-5 col-md-5 col-lg-5">
+      <app-info-panel></app-info-panel>
+    </div>
+    <div class="col-7 col-md-7 col-lg-7">
+      <a [routerLink]="['/']">
+        <div class="navigation d-flex justify-content-start">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.8627 3.225L13.3794 1.75L5.1377 10L13.3877 18.25L14.8627 16.775L8.0877 10L14.8627 3.225Z"
+              fill="#8692A6"
+            />
+          </svg>
+          <span>Back</span>
+        </div>
+      </a>
+      <div class="sign-up-panel">
+        <span class="header-sign-up d-flex justify-content-center"
+          >Register Individual Account!</span
+        >
+        <div class="d-flex justify-content-center">
+          <span class="add-text">Go inside the best recruiters network!</span>
+        </div>
+        <span class="d-flex justify-content-center">
+          <svg
+            width="427"
+            height="1"
+            viewBox="0 0 427 1"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line y1="0.5" x2="427" y2="0.5" stroke="#F5F5F5" />
+          </svg>
+        </span>
+        <div class="sign-up-form d-flex justify-content-center">
+          <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+            <!-- <div>
+              <label class="input-label" for="userName">User name*</label>
+              <div class="input-validation" [attr.input-status]="
                 signUpForm.get('userName').touched && signUpForm.get('userName').invalid
                   ? 'error'
                   : ''
-              "
-            >
-              <input id="userName" class="input-field" type="text" formControlName="userName" />
-            </div>
-            <div
-              *ngIf="
+              ">
+                <input id="userName" class="input-field" type="text" formControlName="userName" />
+              </div>
+              <div *ngIf="
                 signUpForm.get('userName').touched && signUpForm.get('userName').errors?.required
-              "
-              class="input-error"
-            >
-              Required
+              " class="input-error">
+                Required
+              </div>
+            </div> -->
+            <div>
+              <label class="input-label" for="email">Email*</label>
+              <div
+                class="input-validation"
+                [attr.input-status]="
+                  signUpForm.get('email').touched && signUpForm.get('email').invalid ? 'error' : ''
+                "
+              >
+                <input id="email" type="email" class="input-field" formControlName="email" />
+              </div>
+              <div
+                *ngIf="signUpForm.get('email').touched && signUpForm.get('email').errors?.required"
+                class="input-error"
+              >
+                Required
+              </div>
+              <div
+                *ngIf="signUpForm.get('email').touched && signUpForm.get('email').errors?.email"
+                class="input-error"
+              >
+                Incorrect email format
+              </div>
             </div>
-          </div>
-          <div>
-            <label class="input-label" for="email">Email</label>
-            <div
-              class="input-validation"
-              [attr.input-status]="
-                signUpForm.get('email').touched && signUpForm.get('email').invalid ? 'error' : ''
-              "
-            >
-              <input id="email" type="email" class="input-field" formControlName="email" />
+            <div>
+              <label class="input-label" for="password">Password*</label>
+              <div
+                class="input-validation"
+                [attr.input-status]="
+                  signUpForm.get('password').touched && signUpForm.get('password').invalid
+                    ? 'error'
+                    : ''
+                "
+              >
+                <input
+                  id="password"
+                  class="input-field"
+                  type="password"
+                  formControlName="password"
+                />
+              </div>
+              <div
+                *ngIf="
+                  signUpForm.get('password').touched && signUpForm.get('password').errors?.required
+                "
+                class="input-error"
+              >
+                Required
+              </div>
             </div>
-            <div
-              *ngIf="signUpForm.get('email').touched && signUpForm.get('email').errors?.required"
-              class="input-error"
-            >
-              Required
-            </div>
-            <div
-              *ngIf="signUpForm.get('email').touched && signUpForm.get('email').errors?.email"
-              class="input-error"
-            >
-              Incorrect email format
-            </div>
-          </div>
-          <div>
-            <label class="input-label" for="password">Password</label>
-            <div
-              class="input-validation"
-              [attr.input-status]="
-                signUpForm.get('password').touched && signUpForm.get('password').invalid
-                  ? 'error'
-                  : ''
-              "
-            >
-              <input id="password" class="input-field" type="password" formControlName="password" />
-            </div>
-            <div
-              *ngIf="
-                signUpForm.get('password').touched && signUpForm.get('password').errors?.required
-              "
-              class="input-error"
-            >
-              Required
-            </div>
-          </div>
 
-          <div class="w-100"></div>
-          <button
-            class="btn col-12 col-md-12 log-in-btn"
-            type="submit"
-            [disabled]="signUpForm.invalid"
-          >
-            Sign up
-          </button>
-          <span class="d-flex justify-content-center text-underline">Or</span>
-          <div class="w-100"></div>
-          <button class="btn col-12 col-md-12 sign-up-controls" type="button">
-            Sign up with Google
-          </button>
-          <a class="d-flex justify-content-center" [routerLink]="['/log-in']"
-            >Already a member? Sign in!</a
-          >
-        </form>
+            <div class="w-100"></div>
+            <button
+              class="col-12 col-md-12 log-in-btn main-btn"
+              type="submit"
+              [disabled]="signUpForm.invalid"
+            >
+              Register Account
+            </button>
+            <div class="d-flex justify-content-center">
+              <svg
+                width="400"
+                height="15"
+                viewBox="0 0 426 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M213.618 7.63636C213.618 4.875 211.998 3.15341 209.765 3.15341C207.532 3.15341 205.913 4.875 205.913 7.63636C205.913 10.3977 207.532 12.1193 209.765 12.1193C211.998 12.1193 213.618 10.3977 213.618 7.63636ZM212.595 7.63636C212.595 9.90341 211.351 11.1307 209.765 11.1307C208.18 11.1307 206.936 9.90341 206.936 7.63636C206.936 5.36932 208.18 4.14205 209.765 4.14205C211.351 4.14205 212.595 5.36932 212.595 7.63636ZM215.258 12H216.264V7.85795C216.264 6.97159 216.963 6.32386 217.917 6.32386C218.186 6.32386 218.463 6.375 218.531 6.39205V5.36932C218.416 5.3608 218.152 5.35227 218.003 5.35227C217.219 5.35227 216.537 5.79545 216.298 6.44318H216.23V5.45455H215.258V12Z"
+                  fill="#BABABA"
+                />
+                <line x1="254" y1="7.5" x2="426" y2="7.50002" stroke="#F5F5F5" />
+                <line x1="4.37114e-08" y1="7.5" x2="172" y2="7.50002" stroke="#F5F5F5" />
+              </svg>
+            </div>
+            <button class="col-12 col-md-12 additional-btn" type="button">
+              <span style="padding-right: 80px">
+                <svg
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.2569 12.5519H26.25V12.5H15V17.5H22.0644C21.0338 20.4106 18.2644 22.5 15 22.5C10.8581 22.5 7.5 19.1419 7.5 15C7.5 10.8581 10.8581 7.5 15 7.5C16.9119 7.5 18.6513 8.22125 19.9756 9.39937L23.5112 5.86375C21.2787 3.78312 18.2925 2.5 15 2.5C8.09688 2.5 2.5 8.09688 2.5 15C2.5 21.9031 8.09688 27.5 15 27.5C21.9031 27.5 27.5 21.9031 27.5 15C27.5 14.1619 27.4137 13.3438 27.2569 12.5519Z"
+                    fill="#FFC107"
+                  />
+                  <path
+                    d="M3.94141 9.18188L8.04828 12.1938C9.15953 9.4425 11.8508 7.5 15.0002 7.5C16.912 7.5 18.6514 8.22125 19.9758 9.39937L23.5114 5.86375C21.2789 3.78312 18.2927 2.5 15.0002 2.5C10.1989 2.5 6.03516 5.21062 3.94141 9.18188Z"
+                    fill="#FF3D00"
+                  />
+                  <path
+                    d="M15.0002 27.5001C18.2289 27.5001 21.1627 26.2644 23.3808 24.2551L19.5121 20.9813C18.2149 21.9678 16.6299 22.5014 15.0002 22.5001C11.7489 22.5001 8.98832 20.4269 7.94832 17.5338L3.87207 20.6744C5.94082 24.7226 10.1421 27.5001 15.0002 27.5001Z"
+                    fill="#4CAF50"
+                  />
+                  <path
+                    d="M27.2569 12.5519H26.25V12.5H15V17.5H22.0644C21.5714 18.8853 20.6833 20.0957 19.51 20.9819L19.5119 20.9806L23.3806 24.2544C23.1069 24.5031 27.5 21.25 27.5 15C27.5 14.1619 27.4137 13.3438 27.2569 12.5519Z"
+                    fill="#1976D2"
+                  />
+                </svg>
+              </span>
+              <span style="padding-right: 80px">Sign in with Google</span>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

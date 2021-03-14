@@ -1,28 +1,14 @@
-$main-color-orange: #ff9c2d;
+$main-color-orange: #ffc107;
 $additional-color-gray: #9ba5a9;
+$quote-text-color: #696f79;
+$additional-text-color: #8692a6;
 $text-color: #000000;
 $min-input-width: 300px;
-@mixin button-annimation($value) {
-  box-shadow: 0px 2px 12px darken($color: $value, $amount: 5);
-}
 @mixin image-annimation {
   transition: all 0.3s ease-in-out 0s;
   &:hover {
     transform: rotate(60deg);
     transition: all 0.3s ease-in-out 0s;
-  }
-}
-
-button {
-  margin-bottom: 1rem;
-  &:focus,
-  &:active {
-    outline: none;
-  }
-
-  &:disabled {
-    cursor: pointer;
-    opacity: 0.3;
   }
 }
 
@@ -32,7 +18,11 @@ button {
   font-weight: lighter;
 }
 
-.log-in-form {
+.sign-up-panel {
+  padding-top: 10%;
+}
+
+.sign-up-form {
   align-content: center;
   min-width: $min-input-width;
   a {
@@ -46,23 +36,15 @@ button {
   form > div {
     margin-bottom: 0.8rem;
   }
-}
 
-.log-in-btn {
-  &:hover:enabled {
-    @include button-annimation($main-color-orange);
+  button {
+    min-width: 400px;
+    min-height: 54px;
+    margin-bottom: 1rem;
   }
-  background-color: $main-color-orange;
-}
-
-.sign-up-controls {
-  margin-top: 0.5rem;
-  max-width: $min-input-width;
-  &:hover:enabled {
-    @include button-annimation($additional-color-gray);
+  .sign-in-btn {
+    margin-top: 0.7rem;
   }
-  background-color: $additional-color-gray;
-  border: #9ba5a9;
 }
 
 .container-fluid {
@@ -75,10 +57,10 @@ button {
   text-transform: uppercase;
 }
 
-.header-log-in {
+.header-sign-up {
   font-weight: 630;
   font-size: 1.8rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .img-background {
@@ -89,7 +71,85 @@ button {
   }
 }
 
-.log-in-block {
+.sign-up-block {
+  .add-text {
+    color: $additional-text-color;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 28px;
+    margin-bottom: 0.3rem;
+  }
+  .social-media-btn {
+    button {
+      min-width: 55px;
+      min-height: 55px;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.logo {
+  img {
+    max-width: 110px;
+    max-height: 110px;
+    margin-bottom: 1rem;
+  }
+  padding-left: 15%;
+  padding-top: 3%;
+  .logo-text {
+    color: $main-color-orange;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 85px;
+  }
+}
+
+@mixin quote-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 38px;
+  color: $quote-text-color;
+}
+
+.quote {
   padding-top: 10%;
-  padding-left: 62%;
+  padding-left: 2%;
+  .colon {
+    max-width: 31px;
+    max-height: 21px;
+  }
+  .quote-text {
+    @include quote-text();
+    padding-top: 0.2rem;
+  }
+
+  .autor {
+    @include quote-text();
+    margin-top: 3rem;
+  }
+}
+
+.figure-rect {
+  margin-right: 15%;
+}
+
+.navigation {
+  color: $additional-text-color;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  span {
+    padding-bottom: 1px;
+    padding-left: 3px;
+  }
+  padding-left: 8%;
+  &:hover {
+    transform: translate(-10px);
+  }
 }
