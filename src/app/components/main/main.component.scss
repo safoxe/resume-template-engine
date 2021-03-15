@@ -6,15 +6,7 @@
   margin: 0;
   padding: 0;
 }
-
-.home {
-  @include image-prop();
-  background-image: url('../../../assets/background-svgs/background-home-2-overlay.jpg');
-}
-
 .default {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+  @include image-prop();
+  background-image: none;
 }

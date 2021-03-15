@@ -6,7 +6,7 @@ import { ScaffoldMenuComponent } from './components/scaffold-menu/scaffold-menu.
 import { TemplateEngineComponent } from './components/template-engine/template-engine.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, data: { layout: Layout.home } },
+  { path: '', component: HomeComponent, data: { layout: Layout.default } },
   {
     path: 'scaffold-menu',
     component: ScaffoldMenuComponent,

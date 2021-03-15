@@ -21,7 +21,7 @@ export class MainComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.pipe(takeUntil(this.unsubscribe$)).subscribe((layout) => {
       if (layout instanceof NavigationEnd) {
-        this.layout = this.activatedRoute.firstChild.snapshot.data.layout || Layout.default;
+        this.layout = this.activatedRoute.firstChild.snapshot.data.layout;
       }
     });
   }
