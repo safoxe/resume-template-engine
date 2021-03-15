@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <header class="d-flex justify-content-start logo">
+    <a [routerLink]="['/']">
+      <img src="../../../../../assets/sign-in-page/logo-sign-in.svg" alt="logo" />
+    </a>
+    <span class="logo-text">RecruTan</span>
+    <div class="dots-figure">
+      <svg width="50px" height="46px">
+        <use xlink:href="#dots-figure"></use>
+      </svg>
+    </div>
+  </header>
+  <div class="row d-flex justify-content-center">
+    <img
+      class="profile-img"
+      src="../../../../assets/account-profile-logo.jpg"
+      alt="account-profile"
+    />
+  </div>
+  <div class="row d-flex justify-content-center">
+    <span class="account-name">{{ accountName }}</span>
+  </div>
+  <div class="row" style="padding-top: 2%">
+    <div class="col-6 d-flex justify-content-center">
+      <app-my-account-panel-info></app-my-account-panel-info>
+    </div>
+    <div class="col-6 d-flex justify-content-start">
+      <app-my-account-panel-controls></app-my-account-panel-controls>
+    </div>
+  </div>
+</div>

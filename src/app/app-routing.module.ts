@@ -18,18 +18,18 @@ const routes: Routes = [
   {
     path: 'log-in',
     loadChildren: () => import('./modules/log-in/log-in.module').then((m) => m.LogInModule),
-    data: { layout: Layout.logIn },
+    data: { layout: Layout.default },
   },
   {
     path: 'sign-up',
     loadChildren: () => import('./modules/sign-up/sign-up.module').then((m) => m.SignUpModule),
-    data: { layout: Layout.signUp },
+    data: { layout: Layout.default },
   },
   {
     path: 'dashboard',
     loadChildren: () =>
       import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
-    data: { layout: Layout.none },
+    data: { layout: Layout.default },
   },
   {
     path: 'project-creation',
@@ -37,6 +37,13 @@ const routes: Routes = [
       import('./modules/project-creation/project-creation.module').then(
         (m) => m.ProjectCreationModule,
       ),
+    data: { layout: Layout.default },
+  },
+  {
+    path: 'my-account',
+    loadChildren: () =>
+      import('./modules/my-account/my-account.module').then((m) => m.MyAccountModule),
+    data: { layout: Layout.default },
   },
 ];
 

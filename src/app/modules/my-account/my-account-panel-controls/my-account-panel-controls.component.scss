@@ -1,0 +1,30 @@
+button {
+  color: black;
+  text-decoration: none; /* no underline */
+  size: unset;
+  background: none;
+  border: 0;
+  text-align: left;
+  &:focus {
+    border: 0;
+    outline: none;
+  }
+
+  &:hover {
+    .arrow-menu {
+      transform: rotate(0.5turn);
+    }
+  }
+}
+.my-account-control {
+  min-width: 400px;
+  min-height: 56px;
+  border-bottom: 1px solid #e7ecf3;
+  font-style: normal;
+  font-weight: 450;
+  font-size: calc(0.2rem + 1vw);
+  letter-spacing: -0.25px;
+  #log-out {
+    color: #9c9c9d;
+  }
+}

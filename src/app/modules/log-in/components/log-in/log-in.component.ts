@@ -16,6 +16,6 @@ export class LogInComponent {
   });
 
   logIn(): void {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/my-account']);
   }
 }

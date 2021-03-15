@@ -12,12 +12,9 @@
   background-image: url('../../../assets/background-svgs/background-home-2-overlay.jpg');
 }
 
-.logIn {
-  @include image-prop();
-  background-image: url('../../../assets/background-svgs/log-in-background.svg');
-}
-
-.signUp {
-  @include image-prop();
-  background-image: url('../../../assets/background-svgs/sign-up-background.svg');
+.default {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }

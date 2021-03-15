@@ -1,0 +1,29 @@
+$quote-text-color: #696f79;
+
+@mixin quote-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: calc(0.2rem + 1vw);
+  line-height: 38px;
+  color: $quote-text-color;
+}
+
+.quote {
+  margin: 0;
+  padding-left: 25%;
+  padding-top: 3%;
+  .colon {
+    max-width: 25px;
+    max-height: 18px;
+  }
+  .quote-text {
+    @include quote-text();
+    padding-top: 0.2rem;
+    max-width: 85%;
+  }
+
+  .autor {
+    @include quote-text();
+    margin-top: 1rem;
+  }
+}
