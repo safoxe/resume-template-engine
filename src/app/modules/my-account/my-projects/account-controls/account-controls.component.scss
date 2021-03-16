@@ -1,0 +1,45 @@
+$main-color-orange: #ffc107;
+$additional-text-color: #8692a6;
+
+.profile-img {
+  border: 0.3rem solid #ffc107;
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 9%;
+  height: 9%;
+}
+
+.account-name {
+  color: $main-color-orange;
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(0.7rem + 1vw);
+  line-height: 4rem;
+}
+
+.navigation {
+  color: $additional-text-color;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  span {
+    padding-bottom: 1px;
+    padding-left: 3px;
+  }
+  padding-left: 8%;
+  &:hover {
+    transform: translate(-10px);
+  }
+}
+
+.account-controls {
+  padding-left: 10%;
+}
+
+.control-panel {
+  padding-top: 8%;
+  .profile {
+    padding-top: 10%;
+  }
+}

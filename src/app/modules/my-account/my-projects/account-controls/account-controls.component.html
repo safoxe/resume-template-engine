@@ -1,0 +1,23 @@
+<div class="container-fluid" class="control-panel">
+  <a [routerLink]="['/']">
+    <div class="navigation d-flex justify-content-start">
+      <svg width="20px" height="20px">
+        <use xlink:href="#navigation-back"></use>
+      </svg>
+      <span>Back</span>
+    </div>
+  </a>
+  <div class="row d-flex justify-content-center profile">
+    <img
+      class="profile-img"
+      src="../../../../assets/account-profile-logo.jpg"
+      alt="account-profile"
+    />
+  </div>
+  <div class="row d-flex justify-content-center">
+    <span class="account-name">{{ accountName }}</span>
+  </div>
+  <div class="account-controls">
+    <app-my-account-panel-controls></app-my-account-panel-controls>
+  </div>
+</div>

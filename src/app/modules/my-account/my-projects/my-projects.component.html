@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row h-100 no-gutters">
+    <div class="col d-flex justify-content-center">
+      <app-projects-list></app-projects-list>
+    </div>
+    <div
+      mwlResizable
+      [enableGhostResize]="true"
+      resizeCursorPrecision="20"
+      [validateResize]="onResizeValidate.bind(this)"
+      [resizeEdges]="{ left: true }"
+      (resizeEnd)="onResizeEnd($event)"
+      [ngStyle]="style"
+    >
+      <app-account-controls></app-account-controls>
+    </div>
+  </div>
+</div>
