@@ -1,1 +1,33 @@
-<p>projects-list works!</p>
+<div class="container-fluid w-100 projects-list">
+  <header class="d-flex justify-content-start logo">
+    <a [routerLink]="['/']">
+      <img src="../../../../../assets/sign-in-page/logo-sign-in.svg" alt="logo" />
+    </a>
+    <span class="logo-text">RecruTan</span>
+    <div class="dots-figure">
+      <svg width="50px" height="46px">
+        <use xlink:href="#dots-figure"></use>
+      </svg>
+    </div>
+  </header>
+  <div class="row no-gutters projects overflow-auto">
+    <div class="col">
+      <div>
+        <div *ngFor="let project of projects">
+          <div class="project">
+            <div class="media">
+              <svg class="project-logo">
+                <use xlink:href="#project-icon"></use>
+              </svg>
+              <div class="media-body" class="project-description">
+                <h5 class="mt-0">{{ project }}</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                sollicitudin.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
