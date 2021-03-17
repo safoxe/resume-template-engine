@@ -1,0 +1,85 @@
+$main-color-orange: #ffc107;
+$additional-color-gray: #9ba5a9;
+$quote-text-color: #696f79;
+$additional-text-color: #8692a6;
+$text-color: #000000;
+$min-input-width: 300px;
+
+@mixin links-underline {
+  text-decoration: underline;
+  color: $text-color;
+  font-weight: lighter;
+}
+
+.create-project-panel {
+  padding-top: 7%;
+}
+
+.create-project-form {
+  min-width: $min-input-width;
+  a {
+    @include links-underline();
+  }
+
+  input {
+    min-width: $min-input-width;
+  }
+
+  form > div {
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  button {
+    max-width: 300px;
+    min-height: 54px;
+    margin-bottom: 1rem;
+  }
+  .save-btn {
+    margin-top: 0.7rem;
+  }
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.text-underline {
+  @include links-underline();
+  text-transform: uppercase;
+}
+
+.header-create-project {
+  font-weight: 630;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.create-project-block {
+  .add-text {
+    color: $additional-text-color;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 28px;
+    margin-bottom: 0.3rem;
+  }
+}
+
+.navigation {
+  color: $additional-text-color;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  padding-top: 3%;
+  span {
+    padding-bottom: 1px;
+    padding-left: 3px;
+  }
+  padding-left: 8%;
+  &:hover {
+    transform: translate(-10px);
+  }
+}
