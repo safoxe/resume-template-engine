@@ -13,6 +13,11 @@ import { AccountControlsComponent } from './my-projects/account-controls/account
 import { EqualWidthDirective } from './shared/directives/equal-width.directive';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { CreateProjectFormComponent } from './create-project/create-project-form/create-project-form.component';
+import { ProjectComponent } from './project/project.component';
+import { ProjectDescriptionComponent } from './project/project-description/project-description.component';
+import { ProjectControlsComponent } from './project/project-controls/project-controls.component';
+import { ControlsPanelComponent } from './project/project-controls/controls-panel/controls-panel.component';
+import { ProfessionSectionComponent } from './project/project-description/profession-section/profession-section.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,11 @@ import { CreateProjectFormComponent } from './create-project/create-project-form
     EqualWidthDirective,
     CreateProjectComponent,
     CreateProjectFormComponent,
+    ProjectComponent,
+    ProjectDescriptionComponent,
+    ProjectControlsComponent,
+    ControlsPanelComponent,
+    ProfessionSectionComponent,
   ],
   imports: [
     CommonModule,

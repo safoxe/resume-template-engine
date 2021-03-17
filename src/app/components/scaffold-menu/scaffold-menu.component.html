@@ -15,7 +15,7 @@
       </div>
       <div class="row">
         <div class="col-sm">
-          <form [formGroup]="resumeForm" (ngSubmit)="generateTemplate()">
+          <form [attr.formGroup]="resumeForm" (ngSubmit)="generateTemplate()">
             <div class="scaffold-text">
               <span class="heading-small">Position type:</span>
               <select formControlName="positionType" class="text-description-small form-select">

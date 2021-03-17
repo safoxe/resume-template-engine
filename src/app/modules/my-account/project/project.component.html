@@ -1,10 +1,11 @@
 <div class="container-fluid h-100" style="padding-left: 0">
-  <div class="row no-gutters h-100">
-    <div id="projects-col" appEqualWidth class="col" style="max-width: 80%; min-width: 40%">
-      <app-projects-list></app-projects-list>
+  <div class="row no-gutters h-100 w-100">
+    <div id="projects-col" appEqualWidth class="col h-100" style="max-width: 70%; min-width: 40%">
+      <app-project-description></app-project-description>
     </div>
     <div
       id="account-controls-col"
+      class="h-100"
       appEqualWidth
       mwlResizable
       [enableGhostResize]="true"
@@ -15,7 +16,7 @@
       [ngStyle]="style"
       style="min-width: 40%"
     >
-      <app-create-project-form></app-create-project-form>
+      <app-project-controls></app-project-controls>
     </div>
   </div>
 </div>

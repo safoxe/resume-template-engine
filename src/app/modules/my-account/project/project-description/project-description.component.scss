@@ -17,19 +17,38 @@ $project-block-padding: 0.8rem;
   padding-right: 0;
   .projects {
     padding-left: 2%;
-    //padding-right: 5%;
+    padding-right: 5%;
     width: 100%;
   }
 }
 
 .project {
-  background: rgba(255, 193, 7, 0.3);
+  background: rgba(255, 193, 7, 0.4);
   border-radius: 6px;
   margin-bottom: 0.8rem;
   min-height: $project-height;
-  &:hover {
-    background: rgba(255, 193, 7, 0.6);
-    cursor: pointer;
+  padding-left: 1.2rem;
+  padding-top: 1rem;
+  padding-bottom: 0.8rem;
+  .header {
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(0.3rem + 1vw);
+    line-height: 24px;
+
+    color: #000000;
+  }
+  .text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: calc(0.3rem + 1vw);
+    line-height: 24px;
+
+    color: #000000;
+
+    #description {
+      width: 100px;
+    }
   }
 }
 
@@ -67,4 +86,23 @@ $project-block-padding: 0.8rem;
 
 .project-description {
   padding-top: 2%;
+}
+
+.add-category {
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(0.2rem + 1vw);
+  line-height: 17px;
+  cursor: pointer;
+
+  color: #000000;
+
+  &:hover {
+    font-size: calc(0.25rem + 1vw);
+  }
+}
+
+.tech-row {
+  width: 100%;
+  padding-left: 0.5rem;
 }

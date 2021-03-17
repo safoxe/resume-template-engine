@@ -1,0 +1,66 @@
+<div class="container-fluid w-100 projects-list">
+  <header class="d-flex justify-content-start logo">
+    <a [routerLink]="['/']">
+      <img src="../../../../../assets/sign-in-page/logo-sign-in.svg" alt="logo" />
+    </a>
+    <span class="logo-text">RecruTan</span>
+    <div class="dots-figure">
+      <svg width="50px" height="46px">
+        <use xlink:href="#dots-figure"></use>
+      </svg>
+    </div>
+  </header>
+  <div class="row no-gutters projects d-flex">
+    <div
+      class="overflow-auto"
+      style="width: 100%; max-height: 100px; min-height: 430px; min-width: 600px"
+    >
+      <div>
+        <div class="project">
+          <div>
+            <span class="header">Location: &nbsp;</span> <span class="text">Blalaland</span>
+          </div>
+          <div>
+            <span class="header">Assigned to: &nbsp;</span> <span class="text">Mr.Bla Blabla</span>
+          </div>
+          <div>
+            <span class="header">Description: &nbsp;</span>
+            <span class="text" id="description"
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut
+            </span>
+          </div>
+        </div>
+        <div class="project">
+          <app-profession-section
+            professionType="Developer"
+            [resumes]="projects"
+          ></app-profession-section>
+          <app-profession-section
+            professionType="Testers"
+            [resumes]="projects"
+          ></app-profession-section>
+          <app-profession-section
+            professionType="Designers"
+            [resumes]="projects"
+          ></app-profession-section>
+          <div class="add-category">+ Add a category</div>
+        </div>
+        <div class="project">
+          <div>
+            <span class="header">Used technologies</span>
+          </div>
+          <div class="row tech-row">
+            <div *ngFor="let technology of projectTechnologies" class="technologies">
+              <svg width="50px" height="50px">
+                <use xlink:href="#python"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="project"></div>
+      </div>
+    </div>
+  </div>
+</div>

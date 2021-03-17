@@ -1,0 +1,21 @@
+.header {
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(0.3rem + 1vw);
+  line-height: 24px;
+
+  color: #000000;
+}
+
+.resumes-row {
+  width: 100%;
+  padding-top: 0.2rem;
+  button {
+    min-width: 55px;
+    min-height: 55px;
+    margin-left: 1rem;
+  }
+  .add-btn {
+    max-height: 55px;
+  }
+}

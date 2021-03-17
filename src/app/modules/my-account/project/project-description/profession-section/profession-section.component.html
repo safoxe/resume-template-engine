@@ -1,0 +1,13 @@
+<div class="profession-section">
+  <span class="header">{{ professionType }}</span>
+  <div class="row resumes-row">
+    <div *ngFor="let resume of resumes" class="resume">
+      <button class="main-btn" (click)="openJobDescription()"></button>
+    </div>
+    <button class="additional-btn add-btn">
+      <svg width="30px" height="30px">
+        <use xlink:href="#add-black"></use>
+      </svg>
+    </button>
+  </div>
+</div>

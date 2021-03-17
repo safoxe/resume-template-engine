@@ -1,0 +1,27 @@
+<div class="container-fluid" class="control-panel">
+  <div class="row">
+    <div class="col">
+      <a [routerLink]="['/my-account']">
+        <div class="navigation d-flex justify-content-start">
+          <svg width="20px" height="20px">
+            <use xlink:href="#navigation-back"></use>
+          </svg>
+          <span>Back</span>
+        </div>
+      </a>
+      <div class="row d-flex justify-content-center profile">
+        <div>
+          <svg width="100px" height="100px">
+            <use xlink:href="#project-icon"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <span class="account-name">{{ projectName }}</span>
+      </div>
+      <div class="account-controls">
+        <app-controls-panel></app-controls-panel>
+      </div>
+    </div>
+  </div>
+</div>

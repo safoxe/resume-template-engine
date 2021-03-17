@@ -17,7 +17,7 @@
     >
       <div>
         <div *ngFor="let project of projects">
-          <div class="project">
+          <div class="project" (click)="openProject()">
             <div class="media">
               <svg class="project-logo">
                 <use xlink:href="#project-icon"></use>
