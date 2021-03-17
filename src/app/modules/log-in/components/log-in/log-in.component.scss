@@ -35,7 +35,7 @@ $min-input-width: 300px;
 
   button {
     min-width: 400px;
-    min-height: 54px;
+    min-height: calc(35px + 1vw);
     margin-bottom: 1rem;
   }
   .sign-in-btn {
@@ -55,7 +55,7 @@ $min-input-width: 300px;
 
 .header-log-in {
   font-weight: 630;
-  font-size: 1.8rem;
+  font-size: calc(0.9rem + 1vw);
   margin-bottom: 0.2rem;
 }
 
@@ -79,8 +79,8 @@ $min-input-width: 300px;
   }
   .social-media-btn {
     button {
-      min-width: 55px;
-      min-height: 55px;
+      min-width: calc(35px + 1vw);
+      min-height: calc(35px + 1vw);
       margin-left: 1rem;
       margin-bottom: 1rem;
       margin-top: 1rem;

@@ -54,7 +54,7 @@ $additional-color-gray: #ffffff;
   border: $input-border-width solid $input-border-color;
   border-radius: 6px;
   min-width: 400px;
-  min-height: 46px;
+  min-height: calc(30px + 1vw);
 
   &:focus,
   &:active {
