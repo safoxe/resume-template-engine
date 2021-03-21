@@ -129,7 +129,11 @@
                 <use xlink:href="#or-separator"></use>
               </svg>
             </div>
-            <button class="col-12 col-md-12 additional-btn" type="button">
+            <button
+              class="col-12 col-md-12 additional-btn"
+              type="button"
+              (click)="signInWithGoogle()"
+            >
               <span style="padding-right: 80px">
                 <svg height="30px" width="30px">
                   <use xlink:href="#google-icon"></use>

@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   siteUrl: 'http://localhost:4200/template-engine',
   endpoint: 'https://localhost:5001',
+  googleAuthClient: '1097744826327-3t3nov6icb0mb2n7khs2eeu78e2omgu8.apps.googleusercontent.com',
 };
 
 /*

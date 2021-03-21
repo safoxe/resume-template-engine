@@ -26,21 +26,6 @@
         </span>
         <div class="sign-up-form d-flex justify-content-center">
           <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
-            <!-- <div>
-              <label class="input-label" for="userName">User name*</label>
-              <div class="input-validation" [attr.input-status]="
-                signUpForm.get('userName').touched && signUpForm.get('userName').invalid
-                  ? 'error'
-                  : ''
-              ">
-                <input id="userName" class="input-field" type="text" formControlName="userName" />
-              </div>
-              <div *ngIf="
-                signUpForm.get('userName').touched && signUpForm.get('userName').errors?.required
-              " class="input-error">
-                Required
-              </div>
-            </div> -->
             <div>
               <label class="input-label" for="email">Email*</label>
               <div
@@ -62,6 +47,27 @@
                 class="input-error"
               >
                 Incorrect email format
+              </div>
+            </div>
+            <div>
+              <label class="input-label" for="userName">User name*</label>
+              <div
+                class="input-validation"
+                [attr.input-status]="
+                  signUpForm.get('userName').touched && signUpForm.get('userName').invalid
+                    ? 'error'
+                    : ''
+                "
+              >
+                <input id="userName" class="input-field" type="text" formControlName="userName" />
+              </div>
+              <div
+                *ngIf="
+                  signUpForm.get('userName').touched && signUpForm.get('userName').errors?.required
+                "
+                class="input-error"
+              >
+                Required
               </div>
             </div>
             <div>
@@ -104,7 +110,11 @@
                 <use xlink:href="#or-separator"></use>
               </svg>
             </div>
-            <button class="col-12 col-md-12 additional-btn" type="button">
+            <button
+              class="col-12 col-md-12 additional-btn"
+              type="button"
+              (click)="signInWithGoogle()"
+            >
               <span style="padding-right: 80px">
                 <svg height="30px" width="30px">
                   <use xlink:href="#google-icon"></use>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { timeout } from 'rxjs/operators';
+import { BaseComponent } from 'src/app/components/base/base.component';
+import { GoogleAuthService } from 'src/app/services/google-auth/google-auth.service';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 
 @Component({
@@ -8,8 +9,14 @@ import { SpinnerService } from 'src/app/services/spinner/spinner.service';
   templateUrl: './my-account-panel-controls.component.html',
   styleUrls: ['./my-account-panel-controls.component.scss'],
 })
-export class MyAccountPanelControlsComponent implements OnInit {
-  constructor(private router: Router, private spinner: SpinnerService) {}
+export class MyAccountPanelControlsComponent extends BaseComponent implements OnInit {
+  constructor(
+    private router: Router,
+    private spinner: SpinnerService,
+    private googleAuthService: GoogleAuthService,
+  ) {
+    super();
+  }
 
   ngOnInit(): void {}
 
@@ -19,9 +26,9 @@ export class MyAccountPanelControlsComponent implements OnInit {
 
   async logOut(): Promise<void> {
     const spinner = this.spinner.show();
-
-    await this.router.navigate(['/']);
-
+    await this.googleAuthService.logOut().then(() => {
+      this.router.navigate(['/']);
+    });
     spinner.hide();
   }
 }
