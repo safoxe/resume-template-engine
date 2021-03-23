@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from 'src/app/services/auth-guard/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { Layout } from './components/main/types/layout.type';
 import { ScaffoldMenuComponent } from './components/scaffold-menu/scaffold-menu.component';
@@ -30,6 +31,8 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
     data: { layout: Layout.default },
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
   },
   {
     path: 'project-creation',
@@ -38,12 +41,16 @@ const routes: Routes = [
         (m) => m.ProjectCreationModule,
       ),
     data: { layout: Layout.default },
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
   },
   {
     path: 'my-account',
     loadChildren: () =>
       import('./modules/my-account/my-account.module').then((m) => m.MyAccountModule),
     data: { layout: Layout.default },
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
   },
 ];
 

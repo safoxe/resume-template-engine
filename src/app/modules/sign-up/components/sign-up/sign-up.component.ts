@@ -3,6 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GoogleAuthService } from 'src/app/services/google-auth/google-auth.service';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
+import { SignUpService } from './services/sign-up.service';
+import { User } from './types/user.type';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,7 +17,10 @@ export class SignUpComponent {
     private spinner: SpinnerService,
     private router: Router,
     private googleAuthService: GoogleAuthService,
+    private signUpService: SignUpService,
   ) {}
+
+  isUserRegistered = false;
 
   signUpForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -23,9 +28,16 @@ export class SignUpComponent {
     userName: ['', [Validators.required]],
   });
 
-  signUp(): void {
-    // eslint-disable-next-line no-console
-    console.log(this.signUpForm);
+  async signUp(): Promise<void> {
+    const spinner = this.spinner.show();
+    const user = {
+      email: this.signUpForm.get('email').value,
+      userName: this.signUpForm.get('userName').value,
+      password: this.signUpForm.get('password').value,
+    } as User;
+    // await this.signUpService.signUpUser(user).toPromise();
+    this.isUserRegistered = true;
+    spinner.hide();
   }
 
   async signInWithGoogle(): Promise<void> {

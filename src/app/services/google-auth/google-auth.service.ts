@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import {
-  LocalStorageService,
-  LocalStorageItems,
-} from 'src/app/services/local-storage/local-storage.service';
+import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 
 @Injectable({ providedIn: 'root' })
 export class GoogleAuthService {
@@ -13,6 +10,12 @@ export class GoogleAuthService {
   private isGApiSet = false;
 
   private authInstance: gapi.auth2.GoogleAuth;
+
+  private accessTokenString: string;
+
+  getAccessToken(): string {
+    return this.accessTokenString;
+  }
 
   userGapi: BehaviorSubject<gapi.auth2.GoogleUser> = new BehaviorSubject<gapi.auth2.GoogleUser>(
     null,
@@ -41,6 +44,7 @@ export class GoogleAuthService {
     }
 
     const user = await this.authInstance.signIn();
+    this.accessTokenString = user.getAuthResponse().id_token;
 
     return Promise.resolve(user);
   }

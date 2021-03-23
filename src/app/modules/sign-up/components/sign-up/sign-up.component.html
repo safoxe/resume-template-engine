@@ -12,7 +12,7 @@
           <span>Back</span>
         </div>
       </a>
-      <div class="sign-up-panel">
+      <div class="sign-up-panel" *ngIf="!isUserRegistered">
         <span class="header-sign-up d-flex justify-content-center"
           >Register Individual Account!</span
         >
@@ -124,6 +124,19 @@
             </button>
           </form>
         </div>
+      </div>
+      <div class="sign-up-panel" *ngIf="isUserRegistered">
+        <span class="header-sign-up d-flex justify-content-center"
+          >Thank you, {{ signUpForm.get('userName').value }}!</span
+        >
+        <div class="d-flex justify-content-center">
+          <span class="add-text">We got your account ready, please, log in!</span>
+        </div>
+        <span class="d-flex justify-content-center">
+          <svg width="430px" height="2px">
+            <use xlink:href="#separation-line"></use>
+          </svg>
+        </span>
       </div>
     </div>
   </div>
