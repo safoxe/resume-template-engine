@@ -5,6 +5,7 @@ import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 import { GoogleAuthService } from 'src/app/services/google-auth/google-auth.service';
 import { BaseComponent } from 'src/app/components/base/base.component';
 import { takeUntil } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-log-in',
@@ -17,6 +18,7 @@ export class LogInComponent extends BaseComponent implements OnInit {
     private router: Router,
     private spinner: SpinnerService,
     private googleAuthService: GoogleAuthService,
+    private authService: AuthService,
   ) {
     super();
   }
@@ -29,7 +31,17 @@ export class LogInComponent extends BaseComponent implements OnInit {
   });
 
   async logIn(): Promise<void> {
-    this.router.navigate(['/my-account']);
+    const spinner = this.spinner.show();
+    await this.authService
+      .logIn(this.logInForm.get('email').value, this.logInForm.get('password').value)
+      .then(() => {
+        this.router.navigate(['/my-account']);
+        spinner.hide();
+      })
+      .catch((err) => {
+        spinner.hide();
+        console.log(err);
+      });
   }
 
   async signInWithGoogle(): Promise<void> {

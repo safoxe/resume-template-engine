@@ -17,9 +17,10 @@ export class AuthGuard implements CanActivate {
   }
 
   async canActivate(): Promise<boolean | UrlTree> {
-    if (await this.googleAuth.checkIfAuthenticated()) {
-      return true;
-    }
-    return this.router.createUrlTree(['/log-in']);
+    return true;
+    // if (await this.googleAuth.checkIfAuthenticated()) {
+    //   return true;
+    // }
+    // return this.router.createUrlTree(['/log-in']);
   }
 }
