@@ -35,7 +35,7 @@ export class SignUpComponent {
       userName: this.signUpForm.get('userName').value,
       password: this.signUpForm.get('password').value,
     } as User;
-    // await this.signUpService.signUpUser(user).toPromise();
+    await this.signUpService.signUpUser(user).toPromise();
     this.isUserRegistered = true;
     spinner.hide();
   }

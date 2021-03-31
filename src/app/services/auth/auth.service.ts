@@ -12,6 +12,8 @@ interface ErrorResponse {
 export class AuthService {
   private readonly accessTokenName = 'accessToken';
 
+  isAuthenticated$ = new BehaviorSubject<boolean>(false);
+
   constructor(private localStorage: LocalStorageService, private httpClient: HttpClient) {}
 
   async logIn(email: string, password: string): Promise<void> {
@@ -29,7 +31,12 @@ export class AuthService {
       .toPromise()
       .then((token) => {
         this.setAccessToken((token as { access_token: string; username: string }).access_token);
+        this.isAuthenticated$.next(true);
       });
+  }
+
+  isUserAuthenticated(): boolean {
+    return this.getAccessToken() !== null;
   }
 
   getAccessToken(): string {

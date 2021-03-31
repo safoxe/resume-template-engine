@@ -7,6 +7,8 @@ import { LocalStorageService } from 'src/app/services/local-storage/local-storag
 export class GoogleAuthService {
   constructor(private localStorage: LocalStorageService) {}
 
+  private readonly accessTokenName = 'accessToken';
+
   private isGApiSet = false;
 
   private authInstance: gapi.auth2.GoogleAuth;
@@ -45,6 +47,7 @@ export class GoogleAuthService {
 
     const user = await this.authInstance.signIn();
     this.accessTokenString = user.getAuthResponse().id_token;
+    this.localStorage.setItem(this.accessTokenName, this.accessTokenString);
 
     return Promise.resolve(user);
   }
