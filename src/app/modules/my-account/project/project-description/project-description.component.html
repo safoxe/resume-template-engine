@@ -18,32 +18,30 @@
       <div>
         <div class="project">
           <div>
-            <span class="header">Location: &nbsp;</span> <span class="text">Blalaland</span>
+            <span class="header">Location: &nbsp;</span>
+            <span class="text">{{ project.location }}</span>
           </div>
           <div>
-            <span class="header">Assigned to: &nbsp;</span> <span class="text">Mr.Bla Blabla</span>
+            <span class="header">Assigned to: &nbsp;</span>
+            <span class="text">{{ project.assignedTo }}</span>
           </div>
           <div>
             <span class="header">Description: &nbsp;</span>
-            <span class="text" id="description"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut
-            </span>
+            <span class="text" id="description">{{ project.description }} </span>
           </div>
         </div>
         <div class="project">
           <app-profession-section
             professionType="Developer"
-            [resumes]="projects"
+            [resumes]="[1, 2]"
           ></app-profession-section>
           <app-profession-section
             professionType="Testers"
-            [resumes]="projects"
+            [resumes]="[1, 2]"
           ></app-profession-section>
           <app-profession-section
             professionType="Designers"
-            [resumes]="projects"
+            [resumes]="[1, 2]"
           ></app-profession-section>
           <div class="add-category">+ Add a category</div>
         </div>
@@ -52,7 +50,7 @@
             <span class="header">Used technologies</span>
           </div>
           <div class="row tech-row">
-            <div *ngFor="let technology of projectTechnologies" class="technologies">
+            <div *ngFor="let technology of project.usedTechnologies" class="technologies">
               <svg width="50px" height="50px">
                 <use xlink:href="#python"></use>
               </svg>

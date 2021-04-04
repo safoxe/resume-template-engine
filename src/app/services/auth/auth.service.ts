@@ -46,4 +46,8 @@ export class AuthService {
   private setAccessToken(accessToken: string): void {
     this.localStorage.setItem(this.accessTokenName, accessToken);
   }
+
+  logout(): void {
+    this.localStorage.removeItem(this.accessTokenName);
+  }
 }

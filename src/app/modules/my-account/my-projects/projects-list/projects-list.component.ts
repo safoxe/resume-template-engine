@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
+import { ProjectsService } from '../services/projects.service';
+import { Project } from '../../types/project.type';
 
 @Component({
   selector: 'app-projects-list',
@@ -8,27 +10,19 @@ import { SpinnerService } from 'src/app/services/spinner/spinner.service';
   styleUrls: ['./projects-list.component.scss'],
 })
 export class ProjectsListComponent implements OnInit {
-  constructor(private router: Router, private spinner: SpinnerService) {}
+  constructor(
+    private router: Router,
+    private spinner: SpinnerService,
+    private projectsService: ProjectsService,
+  ) {}
 
-  projects: string[] = [
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-  ];
+  projects: Project[] = [];
 
-  ngOnInit(): void {}
+  async ngOnInit(): Promise<void> {
+    this.projects = await this.projectsService.getProjects().toPromise();
+  }
 
-  async openProject(): Promise<void> {
-    const spinner = this.spinner.show();
-
-    await this.router.navigate(['/my-account/project']);
-
-    spinner.hide();
+  openProject(projectId: string): void {
+    this.router.navigateByUrl(`/my-account/project?id=${projectId}`);
   }
 }

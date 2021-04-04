@@ -40,7 +40,6 @@ export class LogInComponent extends BaseComponent implements OnInit {
       })
       .catch((err) => {
         spinner.hide();
-        console.log(err);
       });
   }
 

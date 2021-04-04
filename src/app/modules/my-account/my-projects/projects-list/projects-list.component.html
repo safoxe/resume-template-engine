@@ -17,15 +17,14 @@
     >
       <div>
         <div *ngFor="let project of projects">
-          <div class="project" (click)="openProject()">
+          <div class="project" (click)="openProject(project.id)">
             <div class="media">
               <svg class="project-logo">
                 <use xlink:href="#project-icon"></use>
               </svg>
               <div class="media-body" class="project-description">
-                <h5 class="mt-0">{{ project }}</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                sollicitudin.
+                <h5 class="mt-0">{{ project.name }}</h5>
+                {{ project.description }}
               </div>
             </div>
           </div>

@@ -1,7 +1,13 @@
 <div class="container-fluid h-100" style="padding-left: 0">
   <div class="row no-gutters h-100 w-100">
-    <div id="projects-col" appEqualWidth class="col h-100" style="max-width: 70%; min-width: 40%">
-      <app-project-description></app-project-description>
+    <div
+      *ngIf="project"
+      id="projects-col"
+      appEqualWidth
+      class="col h-100"
+      style="max-width: 70%; min-width: 40%"
+    >
+      <app-project-description [project]="project"></app-project-description>
     </div>
     <div
       id="account-controls-col"

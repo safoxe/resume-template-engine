@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Project } from '../../types/project.type';
 
 @Component({
   selector: 'app-project-description',
@@ -6,19 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-description.component.scss'],
 })
 export class ProjectDescriptionComponent implements OnInit {
-  projects: string[] = [
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-    'Project',
-  ];
-
-  projectTechnologies = ['#python', 'cpp', 'c-sharp', 'mysql'];
+  @Input() project: Project;
 
   ngOnInit(): void {}
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BaseComponent } from 'src/app/components/base/base.component';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { GoogleAuthService } from 'src/app/services/google-auth/google-auth.service';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 
@@ -13,7 +14,7 @@ export class MyAccountPanelControlsComponent extends BaseComponent implements On
   constructor(
     private router: Router,
     private spinner: SpinnerService,
-    private googleAuthService: GoogleAuthService,
+    private authService: AuthService,
   ) {
     super();
   }
@@ -26,9 +27,11 @@ export class MyAccountPanelControlsComponent extends BaseComponent implements On
 
   async logOut(): Promise<void> {
     const spinner = this.spinner.show();
-    await this.googleAuthService.logOut().then(() => {
-      this.router.navigate(['/']);
-    });
+    // await this.googleAuthService.logOut().then(() => {
+    //   this.router.navigate(['/']);
+    // });
+    await this.authService.logout();
+    this.router.navigate(['/']);
     spinner.hide();
   }
 }
