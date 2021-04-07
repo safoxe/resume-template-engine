@@ -4,7 +4,7 @@
     <div *ngFor="let resume of resumes" class="resume">
       <button class="main-btn" (click)="openJobDescription()"></button>
     </div>
-    <button class="additional-btn add-btn">
+    <button class="additional-btn add-btn" (click)="addJobDescription()">
       <svg width="30px" height="30px">
         <use xlink:href="#add-black"></use>
       </svg>

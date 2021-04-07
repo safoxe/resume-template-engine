@@ -11,10 +11,12 @@ const routes: Routes = [
   {
     path: 'scaffold-menu',
     component: ScaffoldMenuComponent,
+    data: { layout: Layout.default },
   },
   {
     path: 'template-engine',
     component: TemplateEngineComponent,
+    data: { layout: Layout.default },
   },
   {
     path: 'log-in',
