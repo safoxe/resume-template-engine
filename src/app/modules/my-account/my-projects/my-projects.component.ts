@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ResizeEvent } from 'angular-resizable-element';
 import { WINDOW_OBJ } from 'src/app/services/window/window.service';
 import { ResizableElementComponent } from '../shared/resizable-element/resizable-element.component';
+import { ProjectsService } from './services/projects.service';
 
 @Component({
   selector: 'app-my-projects',
@@ -10,9 +11,11 @@ import { ResizableElementComponent } from '../shared/resizable-element/resizable
   styleUrls: ['./my-projects.component.scss'],
 })
 export class MyProjectsComponent extends ResizableElementComponent implements OnInit {
-  constructor(private router: Router, @Inject(WINDOW_OBJ) public window: Window) {
+  constructor(private projectsService: ProjectsService, @Inject(WINDOW_OBJ) public window: Window) {
     super(window);
   }
 
-  ngOnInit(): void {}
+  async ngOnInit(): Promise<void> {
+    await this.projectsService.getProjects();
+  }
 }

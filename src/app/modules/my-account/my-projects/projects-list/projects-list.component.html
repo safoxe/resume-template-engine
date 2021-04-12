@@ -15,7 +15,7 @@
       class="overflow-auto"
       style="width: 100%; max-height: 100px; min-height: 430px; min-width: 600px"
     >
-      <div>
+      <div *ngIf="projects">
         <div *ngFor="let project of projects">
           <div class="project" (click)="openProject(project.id)">
             <div class="media">

@@ -42,6 +42,7 @@ export class AddResumeDialogComponent implements OnInit {
       seniorityLevel: this.resumeForm.get('seniorityLevel').value,
     };
     await this.resumeService.createResume(resume);
+    this.close();
   }
 
   getSeniorityIds(): SeniorityId[] {
