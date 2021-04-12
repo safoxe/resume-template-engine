@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ResizableModule } from 'angular-resizable-element';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MyAccountRoutingModule } from './my-account-routing.module';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { MyAccountPanelInfoComponent } from './my-account-panel-info/my-account-panel-info.component';
@@ -18,6 +19,7 @@ import { ProjectDescriptionComponent } from './project/project-description/proje
 import { ProjectControlsComponent } from './project/project-controls/project-controls.component';
 import { ControlsPanelComponent } from './project/project-controls/controls-panel/controls-panel.component';
 import { ProfessionSectionComponent } from './project/project-description/profession-section/profession-section.component';
+import { AddResumeDialogComponent } from './project/project-description/profession-section/add-resume-dialog/add-resume-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { ProfessionSectionComponent } from './project/project-description/profes
     ProjectControlsComponent,
     ControlsPanelComponent,
     ProfessionSectionComponent,
+    AddResumeDialogComponent,
   ],
   imports: [
     CommonModule,

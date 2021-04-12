@@ -8,11 +8,17 @@ import { Project } from '../../types/project.type';
 export class ProjectsService {
   constructor(private http: HttpClient) {}
 
+  currentProject: Project = null;
+
   getProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(`${environment.endpoint}/api/projects/getAll`);
   }
 
-  getProject(id: string): Observable<Project> {
-    return this.http.get<Project>(`${environment.endpoint}/api/projects/get?id=${id}`);
+  async getProject(id: string): Promise<Project> {
+    this.currentProject = await this.http
+      .get<Project>(`${environment.endpoint}/api/projects/get?id=${id}`)
+      .toPromise();
+
+    return this.currentProject;
   }
 }

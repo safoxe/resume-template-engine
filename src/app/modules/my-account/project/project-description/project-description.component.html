@@ -32,18 +32,18 @@
         </div>
         <div class="project">
           <app-profession-section
-            professionType="Developer"
-            [resumes]="[1, 2]"
+            *ngFor="let category of categories"
+            [professionType]="category.category"
+            [resumes]="category.resumes"
           ></app-profession-section>
-          <app-profession-section
-            professionType="Testers"
-            [resumes]="[1, 2]"
-          ></app-profession-section>
-          <app-profession-section
-            professionType="Designers"
-            [resumes]="[1, 2]"
-          ></app-profession-section>
-          <div class="add-category">+ Add a category</div>
+          <div class="add-category" *ngIf="!isCategoryAdded" (click)="addCategory()">
+            + Add a category
+          </div>
+          <div *ngIf="isCategoryAdded">
+            <input type="text" [(ngModel)]="categoryName" />
+            <button [disabled]="categoryName == null" (click)="saveNewCategory()">Save</button>
+            <button (click)="isCategoryAdded = !isCategoryAdded">Cancel</button>
+          </div>
         </div>
         <div class="project">
           <div>
