@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { takeUntil } from 'rxjs/operators';
 import { BaseComponent } from 'src/app/components/base/base.component';
+import { TechnologiesDialogComponent } from 'src/app/components/technologies-dialog/technologies-dialog.component';
 import { Project } from '../../types/project.type';
 import { Resume } from '../../types/resume.type';
 import { ResumeService } from '../services/resume.service';
@@ -11,7 +13,7 @@ import { ResumeService } from '../services/resume.service';
   styleUrls: ['./project-description.component.scss'],
 })
 export class ProjectDescriptionComponent extends BaseComponent implements OnInit {
-  constructor(private resumeService: ResumeService) {
+  constructor(private resumeService: ResumeService, private dialog: MatDialog) {
     super();
   }
 
@@ -55,5 +57,9 @@ export class ProjectDescriptionComponent extends BaseComponent implements OnInit
   async saveNewCategory(): Promise<void> {
     this.isCategoryAdded = !this.isCategoryAdded;
     this.categories.push({ category: this.categoryName, resumes: [] });
+  }
+
+  openTechnologiesSearch(): void {
+    this.dialog.open(TechnologiesDialogComponent);
   }
 }

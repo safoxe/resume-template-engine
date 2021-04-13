@@ -52,6 +52,7 @@ export class ScaffoldMenuComponent implements OnInit {
   async generateTemplate(): Promise<void> {
     const spinner = this.spinner.show();
     const resumeData: Resume = {
+      id: '',
       projectId: '',
       professionType: this.resumeForm.get('positionType').value,
       seniorityLevel: this.resumeForm.get('seniorityLevel').value,

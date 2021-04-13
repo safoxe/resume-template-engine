@@ -23,6 +23,7 @@ export class ProjectsListComponent extends BaseComponent implements OnInit {
   projects: Project[] = [];
 
   async ngOnInit(): Promise<void> {
+    await this.projectsService.getProjects();
     this.projectsService.projects.pipe(takeUntil(this.unsubscribe$)).subscribe((projects) => {
       this.projects = projects;
     });

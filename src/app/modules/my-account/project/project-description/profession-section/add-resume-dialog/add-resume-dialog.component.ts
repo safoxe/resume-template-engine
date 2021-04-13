@@ -37,6 +37,7 @@ export class AddResumeDialogComponent implements OnInit {
 
   async addJobDescription(): Promise<void> {
     const resume: Resume = {
+      id: '',
       projectId: this.projectsService.currentProject.id,
       professionType: this.data.profession,
       seniorityLevel: this.resumeForm.get('seniorityLevel').value,

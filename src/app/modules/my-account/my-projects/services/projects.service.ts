@@ -29,11 +29,14 @@ export class ProjectsService {
   }
 
   async createProject(project: Project): Promise<void> {
-    await this.http
+    const projectsId = await this.http
       .post(`${environment.endpoint}/api/projects/create`, project, {
         responseType: 'text',
       })
       .toPromise();
+
+    // eslint-disable-next-line no-param-reassign
+    project.id = projectsId;
 
     const currentVal = this.projects.value;
     this.projects.next([...currentVal, project]);

@@ -48,6 +48,11 @@
         <div class="project">
           <div>
             <span class="header">Used technologies</span>
+            <button class="additional-btn add-btn" (click)="openTechnologiesSearch()">
+              <svg width="30px" height="30px">
+                <use xlink:href="#add-black"></use>
+              </svg>
+            </button>
           </div>
           <div class="row tech-row">
             <div *ngFor="let technology of project.usedTechnologies" class="technologies">

@@ -12,7 +12,13 @@ export class ResumeService {
   resumes: BehaviorSubject<Resume[]> = new BehaviorSubject<Resume[]>(null);
 
   async createResume(resume: Resume): Promise<void> {
-    await this.http.post<Resume>(`${environment.endpoint}/api/resumes/create`, resume).toPromise();
+    const id = await this.http
+      .post(`${environment.endpoint}/api/resumes/create`, resume, {
+        responseType: 'text',
+      })
+      .toPromise();
+    // eslint-disable-next-line no-param-reassign
+    resume.id = id;
     const currentVal = this.resumes.value;
     this.resumes.next([...currentVal, resume]);
   }

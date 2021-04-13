@@ -3,7 +3,9 @@
   <div class="row resumes-row">
     <span *ngIf="resumes">
       <div *ngFor="let resume of resumes" class="resume">
-        <button class="main-btn" (click)="openJobDescription(resume.id)"></button>
+        <div class="col">
+          <button class="main-btn" (click)="openJobDescription(resume.id)"></button>
+        </div>
       </div>
     </span>
     <button class="additional-btn add-btn" (click)="openCreateResumePopUp()">

@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
@@ -8,6 +9,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class TechnologiesDialogComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<TechnologiesDialogComponent>) {}
+
+  searchVal: string = null;
+
+  imageRef: string = null;
 
   ngOnInit(): void {}
 
