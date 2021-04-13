@@ -6,9 +6,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { ControlNameValue } from '../editable-field/types/control-value.type';
 import { ResumeCoverService } from '../../services/resume-cover-service/resume-cover.service';
 import { TechnologiesDialogComponent } from '../technologies-dialog/technologies-dialog.component';
-import { GeneratedResumeData, Resume } from '../scaffold-menu/types/resume-data.type';
+import { FullResumeData } from '../scaffold-menu/types/resume-data.type';
 import { positions } from '../scaffold-menu/types/position.type';
-import { seniorityTypes } from '../scaffold-menu/types/seniority-level.type';
+import {
+  Seniority,
+  SeniorityName,
+  seniorityTypes,
+} from '../scaffold-menu/types/seniority-level.type';
 
 @Component({
   selector: 'app-resume-template',
@@ -16,16 +20,16 @@ import { seniorityTypes } from '../scaffold-menu/types/seniority-level.type';
   styleUrls: ['./resume-template.component.scss'],
 })
 export class ResumeTemplateComponent extends BaseComponent implements OnInit {
-  @Input() resumeData: GeneratedResumeData = null;
+  @Input() resumeData: FullResumeData = null;
 
   coverPath: string = null;
 
   form = this.fb.group({
     positionType: this.fb.control(''),
     positionName: this.fb.control(''),
-    location: this.fb.control('Location - ADD'),
-    yearsOfExperience: this.fb.control('5+ to be calculated'),
-    recruiter: this.fb.control('Responsible Recruiter - ADD'),
+    location: this.fb.control(''),
+    yearsOfExperience: this.fb.control(''),
+    recruiter: this.fb.control(''),
     aboutProject: this.fb.control(''),
   });
 
@@ -39,15 +43,20 @@ export class ResumeTemplateComponent extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.resumeData) {
-      this.form.get('positionType').setValue(positions[this.resumeData.positionType]);
+      this.form.get('positionType').setValue(this.resumeData.professionType);
       this.form
         .get('positionName')
         .setValue(
-          `${seniorityTypes[this.resumeData.seniorityLevel]} ${
-            positions[this.resumeData.positionType]
-          }`,
+          `${seniorityTypes[this.resumeData.seniorityLevel]} ${this.resumeData.professionType}`,
         );
       this.form.get('aboutProject').setValue(this.resumeData.description);
+      this.form.get('location').setValue(this.resumeData.location);
+      this.form
+        .get('yearsOfExperience')
+        .setValue(
+          `${this.getYearsOfExperience(seniorityTypes[this.resumeData.seniorityLevel])}+ Years`,
+        );
+      this.form.get('recruiter').setValue(this.resumeData.assignedTo);
     }
     this.resumeCoverService.updateResumeCoverPath
       .pipe(takeUntil(this.unsubscribe$))
@@ -62,5 +71,28 @@ export class ResumeTemplateComponent extends BaseComponent implements OnInit {
 
   openTechnologiesDialog(): void {
     this.dialog.open(TechnologiesDialogComponent);
+  }
+
+  getYearsOfExperience(seniority: SeniorityName): number {
+    switch (seniority) {
+      case Seniority.trainee: {
+        return 0;
+      }
+      case Seniority.junior: {
+        return 1;
+      }
+      case Seniority.middle: {
+        return 2;
+      }
+      case Seniority.senior: {
+        return 5;
+      }
+      case Seniority.lead: {
+        return 6;
+      }
+      default: {
+        return 0;
+      }
+    }
   }
 }

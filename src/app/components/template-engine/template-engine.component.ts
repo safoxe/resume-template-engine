@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ResumeDataService } from 'src/app/services/resume-data/resume-data.service';
-import { GeneratedResumeData, Resume } from '../scaffold-menu/types/resume-data.type';
+import { FullResumeData } from '../scaffold-menu/types/resume-data.type';
 
 @Component({
   selector: 'app-template-engine',
@@ -9,11 +9,9 @@ import { GeneratedResumeData, Resume } from '../scaffold-menu/types/resume-data.
   styleUrls: ['./template-engine.component.scss'],
 })
 export class TemplateEngineComponent implements OnInit {
-  resumeData: GeneratedResumeData;
+  resumeData: FullResumeData;
 
-  res: Resume;
-
-  projectId: string;
+  resumeId: string;
 
   constructor(
     private resumeDataService: ResumeDataService,
@@ -21,7 +19,7 @@ export class TemplateEngineComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    this.projectId = this.activatedRoute.snapshot.queryParamMap.get('projectId');
-    this.resumeData = await this.resumeDataService.getResumeData(this.projectId).toPromise();
+    this.resumeId = this.activatedRoute.snapshot.queryParamMap.get('resumeId');
+    this.resumeData = await this.resumeDataService.getResumeData(this.resumeId).toPromise();
   }
 }

@@ -3,6 +3,7 @@ import { PopUpService } from 'src/app/services/pop-up-service/pop-up.service';
 import { environment } from 'src/environments/environment';
 import { MatDialog } from '@angular/material/dialog';
 import { AddResumeDialogComponent } from './add-resume-dialog/add-resume-dialog.component';
+import { Resume } from '../../../types/resume.type';
 
 @Component({
   selector: 'app-profession-section',
@@ -14,12 +15,12 @@ export class ProfessionSectionComponent implements OnInit {
 
   @Input() professionType: string;
 
-  @Input() resumes: string[];
+  @Input() resumes: Resume[];
 
   ngOnInit(): void {}
 
-  openJobDescription(): void {
-    this.popUpService.openPageAsPopup(environment.siteUrl, '6033f040a907ce87785b8250');
+  openJobDescription(resumeId: string): void {
+    this.popUpService.openPageAsPopup(environment.siteUrl, resumeId);
   }
 
   openCreateResumePopUp(): void {
