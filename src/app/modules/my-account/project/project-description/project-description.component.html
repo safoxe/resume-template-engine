@@ -56,9 +56,11 @@
           </div>
           <div class="row tech-row">
             <div *ngFor="let technology of project.usedTechnologies" class="technologies">
-              <svg width="50px" height="50px">
-                <use xlink:href="#python"></use>
-              </svg>
+              <img
+                style="max-width: 60px; max-height: 60px"
+                src="{{ 'https://localhost:5001/images/' + technology + '.png' }}"
+                [alt]="technology"
+              />
             </div>
           </div>
         </div>

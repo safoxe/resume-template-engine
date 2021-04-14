@@ -24,7 +24,6 @@ export class ProjectsService {
     this.currentProject = await this.http
       .get<Project>(`${environment.endpoint}/api/projects/get?id=${id}`)
       .toPromise();
-
     return this.currentProject;
   }
 
@@ -40,5 +39,12 @@ export class ProjectsService {
 
     const currentVal = this.projects.value;
     this.projects.next([...currentVal, project]);
+  }
+
+  async updateUsedTechnologies(tech: string): Promise<void> {
+    if (this.currentProject.usedTechnologies === null) {
+      this.currentProject.usedTechnologies = [];
+    }
+    this.currentProject.usedTechnologies.push(tech);
   }
 }

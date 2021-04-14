@@ -8,6 +8,7 @@ import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/mat
 import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InlineSVGModule } from 'ng-inline-svg';
 import { AppRoutingModule } from './app-routing.module';
 import { ScaffoldMenuComponent } from './components/scaffold-menu/scaffold-menu.component';
 import { TemplateEngineComponent } from './components/template-engine/template-engine.component';
@@ -52,6 +53,7 @@ import { AuthInterceptor } from './services/http-interceptor/auth.interceptor';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatOptionModule,
+    InlineSVGModule.forRoot(),
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
