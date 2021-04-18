@@ -39,32 +39,42 @@
           <div class="add-category" *ngIf="!isCategoryAdded" (click)="addCategory()">
             + Add a category
           </div>
-          <div *ngIf="isCategoryAdded">
-            <input type="text" [(ngModel)]="categoryName" />
-            <button [disabled]="categoryName == null" (click)="saveNewCategory()">Save</button>
-            <button (click)="isCategoryAdded = !isCategoryAdded">Cancel</button>
+          <div *ngIf="isCategoryAdded" class="add-category-control">
+            <input class="input-field category-name" type="text" [(ngModel)]="categoryName" />
+            <button class="main-btn" [disabled]="categoryName == null" (click)="saveNewCategory()">
+              Save
+            </button>
+            <button class="additional-btn" (click)="isCategoryAdded = !isCategoryAdded">
+              Cancel
+            </button>
           </div>
         </div>
         <div class="project">
           <div>
             <span class="header">Used technologies</span>
-            <button class="additional-btn add-btn" (click)="openTechnologiesSearch()">
-              <svg width="30px" height="30px">
-                <use xlink:href="#add-black"></use>
-              </svg>
-            </button>
-          </div>
-          <div class="row tech-row">
-            <div *ngFor="let technology of project.usedTechnologies" class="technologies">
-              <img
-                style="max-width: 60px; max-height: 60px"
-                src="{{ 'https://localhost:5001/images/' + technology + '.png' }}"
-                [alt]="technology"
-              />
+            <div>
+              <span class="row" style="padding-left: 1rem; width: 100%">
+                <div
+                  *ngFor="let technology of project.usedTechnologies"
+                  class="d-flex justify-content-start"
+                >
+                  <div>
+                    <img
+                      style="max-width: 60px; max-height: 60px"
+                      src="{{ 'https://localhost:5001/images/' + technology + '.png' }}"
+                      [alt]="technology"
+                    />
+                  </div>
+                </div>
+                <button class="additional-btn add-btn" (click)="openTechnologiesSearch()">
+                  <svg width="30px" height="30px">
+                    <use xlink:href="#add-black"></use>
+                  </svg>
+                </button>
+              </span>
             </div>
           </div>
         </div>
-        <div class="project"></div>
       </div>
     </div>
   </div>

@@ -1,17 +1,17 @@
 <div class="profession-section">
   <span class="header">{{ professionType }}</span>
   <div class="row resumes-row">
-    <span *ngIf="resumes">
-      <div *ngFor="let resume of resumes" class="resume">
-        <div class="col">
+    <span *ngIf="resumes" class="row">
+      <div *ngFor="let resume of resumes" class="d-flex justify-content-start">
+        <div>
           <button class="main-btn" (click)="openJobDescription(resume.id)"></button>
         </div>
       </div>
+      <button class="additional-btn add-btn" (click)="openCreateResumePopUp()">
+        <svg width="30px" height="30px">
+          <use xlink:href="#add-black"></use>
+        </svg>
+      </button>
     </span>
-    <button class="additional-btn add-btn" (click)="openCreateResumePopUp()">
-      <svg width="30px" height="30px">
-        <use xlink:href="#add-black"></use>
-      </svg>
-    </button>
   </div>
 </div>
