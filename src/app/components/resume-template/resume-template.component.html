@@ -76,26 +76,15 @@
       <div class="about-project-block row">
         <span class="about-project-title">Technologies</span>
         <div class="w-100"></div>
-        <div class="technologies-resume-block">
+        <div class="technologies-resume-block" *ngIf="technologies">
           <span class="technologies-text">Required</span>
           <div class="technologies-logo row">
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
+            <div class="col-md" *ngFor="let tech of technologies">
+              <img
+                src="{{ 'https://localhost:5001/images/' + tech + '.png' }}"
+                alt=""
+                style="max-width: 50px; max-height: 50px"
+              />
             </div>
             <button class="add-btn" (click)="openTechnologiesDialog()">
               <div class="col-md">
@@ -120,24 +109,6 @@
         <div class="technologies-resume-block">
           <span class="technologies-text">Nice to have</span>
           <div class="technologies-logo row">
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
-            <div class="col-md">
-              <img src="/assets/c_plus_logo.png" alt="" style="max-width: 50px; max-height: 50px" />
-            </div>
             <button class="add-btn" (click)="openTechnologiesDialog()">
               <div class="col-md">
                 <svg

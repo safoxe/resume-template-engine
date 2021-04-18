@@ -25,7 +25,7 @@
         placeholder="search..."
         aria-describedby="button-search"
         class="form-control border-0 bg-light"
-        [(ngModel)]="searchVal"
+        [formControl]="imageNameForm"
       />
       <div class="input-group-append">
         <button id="button-search" type="submit" class="btn btn-link text-primary">
@@ -36,10 +36,11 @@
       </div>
     </div>
   </div>
-  <button (click)="addTechnology(searchVal)">
+  <button class="image-btn" *ngIf="searchVal && showImg" (click)="addTechnology(searchVal)">
     <img
+      (error)="onError()"
       style="max-width: 60px; max-height: 60px"
-      src="{{ 'https://localhost:5001/images/' + searchVal + '.png' }}"
+      [src]="getImageUrl()"
       [alt]="searchVal"
     />
   </button>

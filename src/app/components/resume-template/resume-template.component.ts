@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { BaseComponent } from 'src/app/components/base/base.component';
 import { takeUntil } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
+import { ProjectsService } from 'src/app/modules/my-account/my-projects/services/projects.service';
+import { Project } from 'src/app/modules/my-account/types/project.type';
 import { ControlNameValue } from '../editable-field/types/control-value.type';
 import { ResumeCoverService } from '../../services/resume-cover-service/resume-cover.service';
 import { TechnologiesDialogComponent } from '../technologies-dialog/technologies-dialog.component';
@@ -24,6 +26,8 @@ export class ResumeTemplateComponent extends BaseComponent implements OnInit {
 
   coverPath: string = null;
 
+  technologies: string[] = null;
+
   form = this.fb.group({
     positionType: this.fb.control(''),
     positionName: this.fb.control(''),
@@ -36,6 +40,7 @@ export class ResumeTemplateComponent extends BaseComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private resumeCoverService: ResumeCoverService,
+    private projectsService: ProjectsService,
     private dialog: MatDialog,
   ) {
     super();
