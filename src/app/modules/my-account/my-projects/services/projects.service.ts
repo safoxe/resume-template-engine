@@ -27,7 +27,7 @@ export class ProjectsService {
     return this.currentProject;
   }
 
-  async createProject(project: Project): Promise<void> {
+  async createProject(project: Project): Promise<string> {
     const projectsId = await this.http
       .post(`${environment.endpoint}/api/projects/create`, project, {
         responseType: 'text',
@@ -39,6 +39,7 @@ export class ProjectsService {
 
     const currentVal = this.projects.value;
     this.projects.next([...currentVal, project]);
+    return projectsId;
   }
 
   async updateUsedTechnologies(tech: string): Promise<void> {

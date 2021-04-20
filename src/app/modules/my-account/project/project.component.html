@@ -1,4 +1,4 @@
-<div class="container-fluid h-100" style="padding-left: 0">
+<div *ngIf="project" class="container-fluid h-100" style="padding-left: 0">
   <div class="row no-gutters h-100 w-100">
     <div
       *ngIf="project"
@@ -22,7 +22,7 @@
       [ngStyle]="style"
       style="min-width: 35%"
     >
-      <app-project-controls></app-project-controls>
+      <app-project-controls [projectName]="project.name"></app-project-controls>
     </div>
   </div>
 </div>

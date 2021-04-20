@@ -4,7 +4,9 @@
     <span *ngIf="resumes" class="row">
       <div *ngFor="let resume of resumes" class="d-flex justify-content-start">
         <div>
-          <button class="main-btn" (click)="openJobDescription(resume.id)"></button>
+          <button class="main-btn" (click)="openJobDescription(resume.id)">
+            {{ getProfessionTypeLetter(resume.seniorityLevel) }}
+          </button>
         </div>
       </div>
       <button class="additional-btn add-btn" (click)="openCreateResumePopUp()">

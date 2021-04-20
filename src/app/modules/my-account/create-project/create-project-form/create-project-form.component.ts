@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
+import { Router } from '@angular/router';
 import { Project } from '../../types/project.type';
 import { ProjectsService } from '../../my-projects/services/projects.service';
 
@@ -14,6 +15,7 @@ export class CreateProjectFormComponent implements OnInit {
     private fb: FormBuilder,
     private createProjectService: ProjectsService,
     private spinnerService: SpinnerService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {}
@@ -34,7 +36,8 @@ export class CreateProjectFormComponent implements OnInit {
     } as Project;
 
     const spinner = this.spinnerService.show();
-    await this.createProjectService.createProject(project);
+    const projectId = await this.createProjectService.createProject(project);
     spinner.hide();
+    this.router.navigate(['/my-account/project'], { queryParams: { id: projectId } });
   }
 }
